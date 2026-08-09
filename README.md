@@ -617,6 +617,7 @@ techmind-v2/
 │
 ├── data/
 │   ├── raw/
+│   ├── audit/
 │   └── processed/
 │
 ├── deployment/
@@ -631,7 +632,6 @@ techmind-v2/
 │
 ├── monitoring/
 │   ├── config/
-│   ├── versions/
 │   ├── batches/
 │   └── logs/
 │
