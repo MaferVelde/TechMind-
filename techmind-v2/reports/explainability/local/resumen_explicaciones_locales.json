@@ -1,0 +1,81 @@
+{
+    "proyecto": "TechMind v2.0",
+    "fecha_generacion": "2026-08-05T19:47:33",
+    "metodo": "Contribuciones locales TF-IDF por coeficientes lineales",
+    "modelo": "TF-IDF + SGDClassifier optimizado",
+    "categorias": [
+        "backend",
+        "cloud",
+        "datascience",
+        "frontend"
+    ],
+    "numero_casos_analizados": 4,
+    "predicciones_recalculadas_coinciden": true,
+    "casos": [
+        {
+            "Tipo_caso": "Acierto_margen_alto",
+            "Categoria_real": "frontend",
+            "Categoria_predicha": "frontend",
+            "Categoria_alternativa": "cloud",
+            "Prediccion_correcta": true,
+            "Puntuacion_predicha": 3.580459391265681,
+            "Puntuacion_alternativa": -2.042400954615887,
+            "Margen_decision": 5.622860345881568,
+            "Terminos_activos": 4,
+            "Reconstruccion_correcta": true,
+            "Top_terminos_favorecen": "css | tailwind | tailwind css | css css",
+            "Top_terminos_contradicen": "",
+            "Top_terminos_diferenciales": "css | tailwind | tailwind css | css css",
+            "id_documento": 2120
+        },
+        {
+            "Tipo_caso": "Acierto_margen_bajo",
+            "Categoria_real": "backend",
+            "Categoria_predicha": "backend",
+            "Categoria_alternativa": "frontend",
+            "Prediccion_correcta": true,
+            "Puntuacion_predicha": -0.3415868860913621,
+            "Puntuacion_alternativa": -0.34558169996475274,
+            "Margen_decision": 0.0039948138733906235,
+            "Terminos_activos": 48,
+            "Reconstruccion_correcta": true,
+            "Top_terminos_favorecen": "api | use it | postman | project | up",
+            "Top_terminos_contradicen": "explained how | set | it works | a real | set up",
+            "Top_terminos_diferenciales": "api | use it | browser | postman | set",
+            "id_documento": 2514
+        },
+        {
+            "Tipo_caso": "Error_margen_bajo",
+            "Categoria_real": "datascience",
+            "Categoria_predicha": "frontend",
+            "Categoria_alternativa": "datascience",
+            "Prediccion_correcta": false,
+            "Puntuacion_predicha": -0.08830684787920151,
+            "Puntuacion_alternativa": -0.09829283075147799,
+            "Margen_decision": 0.009985982872276478,
+            "Terminos_activos": 21,
+            "Reconstruccion_correcta": true,
+            "Top_terminos_favorecen": "building | scratch | from scratch | let | let s",
+            "Top_terminos_contradicen": "feels like | machine | production | import | feels",
+            "Top_terminos_diferenciales": "building | machine | from | feels like | like",
+            "id_documento": 3166
+        },
+        {
+            "Tipo_caso": "Error_margen_alto",
+            "Categoria_real": "backend",
+            "Categoria_predicha": "cloud",
+            "Categoria_alternativa": "backend",
+            "Prediccion_correcta": false,
+            "Puntuacion_predicha": 1.6551283399163452,
+            "Puntuacion_alternativa": -1.4608090243329634,
+            "Margen_decision": 3.1159373642493087,
+            "Terminos_activos": 28,
+            "Reconstruccion_correcta": true,
+            "Top_terminos_favorecen": "cloud | hosting | vps | to cloud | shared",
+            "Top_terminos_contradicen": "your app | from | when to | to move | when",
+            "Top_terminos_diferenciales": "cloud | hosting | vps | your app | shared",
+            "id_documento": 2733
+        }
+    ],
+    "advertencia": "Las contribuciones explican el comportamiento matemático del modelo, no relaciones causales."
+}

@@ -1,0 +1,101 @@
+﻿Categoria,Tipo_influencia,Posicion,Termino,Coeficiente
+backend,Positiva,1,backend,6.026514943945929
+backend,Positiva,2,go,4.393038029819594
+backend,Positiva,3,fastapi,2.872771545496686
+backend,Positiva,4,http,2.750162459997612
+backend,Positiva,5,spring,2.7074366716775464
+backend,Positiva,6,php,2.6091453335577772
+backend,Positiva,7,nestjs,2.608725513375445
+backend,Positiva,8,api,2.5881414996018677
+backend,Positiva,9,database,2.5122151985155035
+backend,Positiva,10,webhook,2.436045573202869
+backend,Positiva,11,that,2.4047306010634872
+backend,Positiva,12,java,2.317208542227787
+backend,Positiva,13,queue,2.258965965842661
+backend,Positiva,14,kafka,2.1732767105525883
+backend,Positiva,15,seconds,2.0438327265654532
+backend,Positiva,16,saas,2.036753460318108
+backend,Positiva,17,system,2.018098922207191
+backend,Positiva,18,payment,1.990536379436956
+backend,Positiva,19,distributed,1.9311504980250094
+backend,Positiva,20,runtime,1.9145324522871958
+backend,Positiva,21,in go,1.8817381715360824
+backend,Positiva,22,postgres,1.8688562306995302
+backend,Positiva,23,apis,1.8663010494234995
+backend,Positiva,24,sql,1.8036226272381306
+backend,Positiva,25,laravel,1.7991906962100757
+cloud,Positiva,1,cloud,9.660929656412499
+cloud,Positiva,2,aws,6.283672978155077
+cloud,Positiva,3,azure,4.138708725659118
+cloud,Positiva,4,kubernetes,4.080837193882157
+cloud,Positiva,5,devops,2.824980416516795
+cloud,Positiva,6,infrastructure,2.812067913672531
+cloud,Positiva,7,terraform,2.778202025088629
+cloud,Positiva,8,hosting,2.5269284392902045
+cloud,Positiva,9,claude,2.513439291532066
+cloud,Positiva,10,costs,2.3161459399561375
+cloud,Positiva,11,resource,2.0599128424577047
+cloud,Positiva,12,ai,2.050815225187635
+cloud,Positiva,13,monitoring,1.8811862152508154
+cloud,Positiva,14,linux,1.856862305516155
+cloud,Positiva,15,software,1.856789172089306
+cloud,Positiva,16,railway,1.8251686493822454
+cloud,Positiva,17,multi-tenant saas,1.7425363456787313
+cloud,Positiva,18,lambda,1.7215229650050177
+cloud,Positiva,19,cloudflare,1.7185749609966423
+cloud,Positiva,20,cd,1.6473662121055477
+cloud,Positiva,21,security,1.603967698175371
+cloud,Positiva,22,self-hosted,1.5934978096925105
+cloud,Positiva,23,python package,1.5923637482470792
+cloud,Positiva,24,iam,1.5868010310196017
+cloud,Positiva,25,backup,1.5760559561208456
+datascience,Positiva,1,data,6.506376269047643
+datascience,Positiva,2,bi,2.288124162624879
+datascience,Positiva,3,python,2.2256687854018558
+datascience,Positiva,4,csv,2.1206111612909004
+datascience,Positiva,5,backtest,2.1196354328661497
+datascience,Positiva,6,science,2.1136366739540717
+datascience,Positiva,7,data science,2.08805182260474
+datascience,Positiva,8,prediction,2.080369690416983
+datascience,Positiva,9,machine learning,2.058013281246217
+datascience,Positiva,10,excel,2.043439005905087
+datascience,Positiva,11,dolphinscheduler,2.0371401275847445
+datascience,Positiva,12,sports,2.027487092822415
+datascience,Positiva,13,analysis,1.983665966298126
+datascience,Positiva,14,scrape,1.9697550377642943
+datascience,Positiva,15,web scraping,1.9370254781784422
+datascience,Positiva,16,analyst,1.9079730506391157
+datascience,Positiva,17,power bi,1.9027898939483736
+datascience,Positiva,18,apache,1.7866200463768163
+datascience,Positiva,19,scraping,1.7818942575192211
+datascience,Positiva,20,model,1.7408542105439104
+datascience,Positiva,21,000,1.7171747431300737
+datascience,Positiva,22,dataset,1.6450067862017876
+datascience,Positiva,23,regression,1.6066764856940736
+datascience,Positiva,24,leads,1.59692259272571
+datascience,Positiva,25,analyze,1.5842454627826343
+frontend,Positiva,1,frontend,7.594366400294916
+frontend,Positiva,2,react,5.888096964120044
+frontend,Positiva,3,css,4.7752822881259505
+frontend,Positiva,4,javascript,3.9135771851001286
+frontend,Positiva,5,ui,3.7114282376445487
+frontend,Positiva,6,angular,3.573368135441667
+frontend,Positiva,7,web,2.5697496878111714
+frontend,Positiva,8,html,2.4125177888338936
+frontend,Positiva,9,front-end,2.4105436986828788
+frontend,Positiva,10,building,2.370283928460427
+frontend,Positiva,11,component,2.2996392212698744
+frontend,Positiva,12,my software,2.2227522063728817
+frontend,Positiva,13,sites,2.1316042351832123
+frontend,Positiva,14,components,2.1058946879372864
+frontend,Positiva,15,design systems,1.9815659358995763
+frontend,Positiva,16,testing,1.9680026307715586
+frontend,Positiva,17,browser,1.9631563670076626
+frontend,Positiva,18,page,1.939585050973676
+frontend,Positiva,19,technical,1.9239890334329015
+frontend,Positiva,20,strategies,1.881213299770033
+frontend,Positiva,21,engineering marathon,1.8617648380054492
+frontend,Positiva,22,accessibility,1.8540020016117453
+frontend,Positiva,23,next.js,1.8420798530880216
+frontend,Positiva,24,dom,1.826263169883366
+frontend,Positiva,25,button,1.8175025645309635

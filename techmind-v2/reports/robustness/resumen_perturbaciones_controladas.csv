@@ -1,0 +1,15 @@
+﻿Transformacion,Casos,Predicciones_estables,Tasa_estabilidad,Accuracy_esperada,Margen_medio,Cambio_margen_medio,Terminos_activos_promedio,Cambio_terminos_medio,Diagnostico_estabilidad
+Formato título,8,2,0.25,0.25,0.3136265902147384,-5.9902286964593845,0.0,-10.25,Muy sensible
+Mayúsculas,8,2,0.25,0.25,0.3136265902147384,-5.9902286964593845,0.0,-10.25,Muy sensible
+Texto truncado,8,8,1.0,1.0,4.193124686862559,-2.110730599811565,5.125,-5.125,Alta
+Ruido textual,8,8,1.0,1.0,4.881473207394517,-1.4223820792796065,16.375,6.125,Alta
+Ruido web,8,8,1.0,1.0,5.411017902615633,-0.8928373840584904,13.25,3.0,Alta
+Errores tipográficos,8,8,1.0,1.0,5.981562675006957,-0.3222926116671661,6.625,-3.625,Alta
+Sin puntuación,8,8,1.0,1.0,6.185701048455783,-0.11815423821834076,10.375,0.125,Alta
+Texto duplicado,8,8,1.0,1.0,6.2963652622821815,-0.007490024391942185,10.375,0.125,Alta
+Espacios irregulares,8,8,1.0,1.0,6.303855286674123,0.0,10.25,0.0,Alta
+Minúsculas,8,8,1.0,1.0,6.303855286674123,0.0,10.25,0.0,Alta
+Original,8,8,1.0,1.0,6.303855286674123,0.0,10.25,0.0,Alta
+Puntuación extrema,8,8,1.0,1.0,6.303855286674123,0.0,10.25,0.0,Alta
+Saltos de línea,8,8,1.0,1.0,6.303855286674123,0.0,10.25,0.0,Alta
+Orden invertido,8,8,1.0,1.0,6.523257792940894,0.21940250626677088,9.0,-1.25,Alta

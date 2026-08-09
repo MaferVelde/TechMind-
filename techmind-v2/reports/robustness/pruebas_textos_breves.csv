@@ -1,0 +1,13 @@
+﻿Texto,Categoria_esperada,Categoria_predicha,Segunda_categoria,Puntuacion_ganadora,Puntuacion_segunda,Margen_decision,Terminos_activos,Longitud_caracteres,Longitud_palabras,Prediccion_esperada
+java api,backend,backend,cloud,2.582486613309525,-1.351242727478843,3.933729340788368,2,8,2,True
+spring database,backend,backend,datascience,2.9008877419059234,-1.693668950512408,4.594556692418331,2,15,2,True
+aws cloud,cloud,cloud,datascience,5.572694274617605,-2.9936546412999263,8.566348915917532,3,9,2,True
+kubernetes terraform,cloud,cloud,frontend,4.042954165137287,-2.137401169886964,6.180355335024251,2,20,2,True
+machine learning,datascience,datascience,cloud,1.7796573638495374,-1.4153307550695384,3.194988118919076,3,16,2,True
+pandas dataset,datascience,datascience,backend,1.1449284364139878,-1.3955981269421796,2.5405265633561673,2,14,2,True
+react css,frontend,frontend,datascience,7.076281867406547,-2.864984541158519,9.941266408565067,2,9,2,True
+html javascript,frontend,frontend,backend,3.970171591932569,-1.9260161364698671,5.896187728402436,2,15,2,True
+api,backend,backend,datascience,1.799161283166697,-1.461285975623392,3.260447258790089,1,3,1,True
+cloud,cloud,cloud,datascience,8.902196705028606,-4.387855466571159,13.290052171599765,1,5,1,True
+data,datascience,datascience,cloud,5.651994275090583,-2.3726456979896207,8.024639973080204,1,4,1,True
+css,frontend,frontend,cloud,4.330175926956796,-2.2158388218968326,6.546014748853629,1,3,1,True

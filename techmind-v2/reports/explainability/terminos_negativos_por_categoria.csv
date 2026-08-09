@@ -1,0 +1,101 @@
+﻿Categoria,Tipo_influencia,Posicion,Termino,Coeficiente
+backend,Negativa,1,cloud,-4.187865676571025
+backend,Negativa,2,frontend,-4.177421827986611
+backend,Negativa,3,react,-3.4174660799182788
+backend,Negativa,4,aws,-2.9079188635688484
+backend,Negativa,5,data,-2.809086983934809
+backend,Negativa,6,css,-2.4636989112797627
+backend,Negativa,7,kubernetes,-2.446205712189199
+backend,Negativa,8,angular,-2.156546299711837
+backend,Negativa,9,my software,-1.9885291804855032
+backend,Negativa,10,azure,-1.8950053663794533
+backend,Negativa,11,web,-1.5705988623738272
+backend,Negativa,12,engineering marathon,-1.5589274974930742
+backend,Negativa,13,any,-1.494006771274891
+backend,Negativa,14,day 45,-1.4232868504446874
+backend,Negativa,15,45 of,-1.4232868504446874
+backend,Negativa,16,software engineering,-1.4198865397066711
+backend,Negativa,17,csv,-1.4071921975919506
+backend,Negativa,18,components,-1.3709412933606149
+backend,Negativa,19,45,-1.3555050348933988
+backend,Negativa,20,website,-1.3459938545295367
+backend,Negativa,21,terraform,-1.3274220228146074
+backend,Negativa,22,ui,-1.3256851946559356
+backend,Negativa,23,shared configuration,-1.3139207225142677
+backend,Negativa,24,design systems,-1.307816476662691
+backend,Negativa,25,grade,-1.290712342167803
+cloud,Negativa,1,frontend,-2.5616654471898643
+cloud,Negativa,2,backend,-2.486422987209879
+cloud,Negativa,3,building a,-1.9757900514023141
+cloud,Negativa,4,building,-1.9059003568717303
+cloud,Negativa,5,pocketbase,-1.6917101792618576
+cloud,Negativa,6,ui,-1.664453730225734
+cloud,Negativa,7,data,-1.613912746605728
+cloud,Negativa,8,react,-1.5294046783652098
+cloud,Negativa,9,go,-1.4871199095354166
+cloud,Negativa,10,css,-1.4571058705129396
+cloud,Negativa,11,javascript,-1.4524227673692256
+cloud,Negativa,12,engineer course,-1.4389100059951492
+cloud,Negativa,13,design,-1.3603109682190324
+cloud,Negativa,14,tracking,-1.3601666223590558
+cloud,Negativa,15,data science,-1.3106616690957715
+cloud,Negativa,16,elt,-1.2854696016749234
+cloud,Negativa,17,etl,-1.2854696016749234
+cloud,Negativa,18,event,-1.259068991682285
+cloud,Negativa,19,angular,-1.2361365679747376
+cloud,Negativa,20,for frontend,-1.2289256659869952
+cloud,Negativa,21,with docker,-1.2260557957091245
+cloud,Negativa,22,how ai,-1.2231943709318474
+cloud,Negativa,23,developers a,-1.2078007298068278
+cloud,Negativa,24,docker and,-1.201066793756712
+cloud,Negativa,25,for microservices,-1.1708282209358225
+datascience,Negativa,1,cloud,-3.533473472614098
+datascience,Negativa,2,javascript,-1.9499826060318546
+datascience,Negativa,3,backend,-1.9274659594900658
+datascience,Negativa,4,aws,-1.8968558137501041
+datascience,Negativa,5,frontend,-1.6710180207345202
+datascience,Negativa,6,css,-1.528449945722959
+datascience,Negativa,7,saas,-1.3840743171261478
+datascience,Negativa,8,real-time,-1.3610999849851686
+datascience,Negativa,9,security,-1.3385262002253426
+datascience,Negativa,10,react,-1.310934945591452
+datascience,Negativa,11,software,-1.2042097993009984
+datascience,Negativa,12,resilient,-1.1910786784016563
+datascience,Negativa,13,apps,-1.17730783550798
+datascience,Negativa,14,server,-1.1483185732553403
+datascience,Negativa,15,backup,-1.1452084245305982
+datascience,Negativa,16,ui,-1.1441949677350987
+datascience,Negativa,17,kubernetes,-1.1436602338449042
+datascience,Negativa,18,on azure,-1.1378365812724271
+datascience,Negativa,19,engineering,-1.1188413806251738
+datascience,Negativa,20,app,-1.0978090973069299
+datascience,Negativa,21,why i,-1.0962074969122264
+datascience,Negativa,22,design,-1.0860663442820477
+datascience,Negativa,23,something,-1.0825952524488422
+datascience,Negativa,24,nestjs,-1.0803064110072682
+datascience,Negativa,25,developer,-1.0673764222327815
+frontend,Negativa,1,cloud,-4.275786351871453
+frontend,Negativa,2,backend,-2.832747044841963
+frontend,Negativa,3,go,-2.6914355611250587
+frontend,Negativa,4,aws,-2.546285622305644
+frontend,Negativa,5,python,-2.437960635433589
+frontend,Negativa,6,data,-2.1069508509216024
+frontend,Negativa,7,ai,-1.748373235344643
+frontend,Negativa,8,php,-1.737479356084519
+frontend,Negativa,9,sql,-1.72013365295406
+frontend,Negativa,10,llm,-1.7075680266267215
+frontend,Negativa,11,rate,-1.6870655551818032
+frontend,Negativa,12,on,-1.6120791848277805
+frontend,Negativa,13,service,-1.5533398420264337
+frontend,Negativa,14,microsoft,-1.5205152648349933
+frontend,Negativa,15,api,-1.5024145843169356
+frontend,Negativa,16,distributed,-1.4812577521723675
+frontend,Negativa,17,system,-1.4789986295000563
+frontend,Negativa,18,azure,-1.4683031323828877
+frontend,Negativa,19,server,-1.4616023023759812
+frontend,Negativa,20,full-stack,-1.4268882917945094
+frontend,Negativa,21,temporal,-1.4264402781201897
+frontend,Negativa,22,for ai,-1.4192421245626254
+frontend,Negativa,23,api design,-1.4064556005233655
+frontend,Negativa,24,re,-1.3751795401323965
+frontend,Negativa,25,fintech,-1.3656417505244005

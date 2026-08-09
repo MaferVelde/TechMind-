@@ -1,0 +1,9 @@
+﻿ID_ejemplo,Categoria_esperada,Texto_original,Categoria_predicha,Segunda_categoria,Puntuacion_ganadora,Puntuacion_segunda,Margen_decision,Terminos_activos,Longitud_caracteres,Longitud_palabras,Prediccion_esperada
+backend_01,backend,java spring boot rest api microservices postgresql server backend architecture,backend,cloud,3.6257644348433775,-0.9778480650474983,4.603612499890875,14,78,10,True
+backend_02,backend,node.js express api authentication database server application,backend,cloud,2.1139235344258016,-1.2799213693000664,3.393844903725868,8,62,7,True
+cloud_01,cloud,aws kubernetes terraform docker cloud infrastructure deployment monitoring,cloud,frontend,7.18331272182882,-3.3691671879838174,10.552479909812638,9,74,8,True
+cloud_02,cloud,azure virtual machine serverless iam cloud security devops,cloud,backend,4.454456930174318,-2.3706917913787238,6.825148721553042,11,58,8,True
+datascience_01,datascience,python pandas scikit-learn machine learning dataset predictive model,datascience,cloud,3.238009854731216,-1.5345409185325178,4.772550773263734,8,68,8,True
+datascience_02,datascience,data science feature engineering regression classification numpy statistics,datascience,frontend,2.135476044378134,-0.9903062015882654,3.1257822459663998,10,75,8,True
+frontend_01,frontend,react javascript css html responsive interface frontend components,frontend,cloud,5.8713859309252605,-2.5804634539673255,8.451849384892586,11,66,8,True
+frontend_02,frontend,vue angular browser web design ui css flexbox frontend,frontend,datascience,6.108890158963099,-2.5966836953247467,8.705573854287845,11,54,9,True

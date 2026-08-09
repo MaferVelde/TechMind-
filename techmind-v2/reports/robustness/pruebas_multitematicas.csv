@@ -1,0 +1,7 @@
+﻿Categorias_presentes,Texto,Categoria_predicha,Segunda_categoria,Puntuacion_ganadora,Puntuacion_segunda,Margen_decision,Terminos_activos,Longitud_caracteres,Longitud_palabras,Top2_cubren_ambos_temas,Prediccion_en_temas
+backend|cloud,java spring boot rest api microservices aws kubernetes terraform cloud deployment,cloud,backend,3.814322975628081,-0.6552297074158815,4.469552683043963,15,81,11,True,True
+backend|datascience,python machine learning predictive api fastapi database backend service,backend,datascience,2.1050271856531606,0.31003579413399796,1.7949913915191626,11,71,9,True,True
+backend|frontend,node.js express rest api react javascript css frontend full stack,frontend,cloud,2.5488399275030234,-1.4946053258998364,4.04344525340286,15,65,10,False,True
+cloud|datascience,aws cloud data pipeline machine learning model deployment kubernetes,cloud,datascience,2.6918483882640007,0.22625050189291307,2.4655978863710875,14,68,9,True,True
+cloud|frontend,react frontend application deployed with docker kubernetes aws cloud,cloud,frontend,2.0441512869817595,1.0424856482515068,1.0016656387302527,12,68,9,True,True
+datascience|frontend,interactive data visualization dashboard react javascript pandas analytics,frontend,datascience,1.4327063398150481,-0.17392442788304718,1.6066307676980953,11,74,8,True,True
