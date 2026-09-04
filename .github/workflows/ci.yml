@@ -84,12 +84,14 @@ jobs:
             techmind_v12 \
             techmind_api_v12
 
-      - name: Ruff check v1.2 maintained code
+      - name: Ruff correctness check
         run: |
           python -m ruff check \
             techmind_v12 \
             techmind_api_v12 \
-            tests/v1.2
+            tests/v1.2 \
+            --select E,F,W \
+            --ignore E501
 
       - name: Import stable v1.1 packages
         run: |
