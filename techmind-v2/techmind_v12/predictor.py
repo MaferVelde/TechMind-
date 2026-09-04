@@ -1,22 +1,18 @@
-\
 from __future__ import annotations
 
+import hashlib
 from collections.abc import Iterable
 from pathlib import Path
 from typing import Any
-import hashlib
 
 import joblib
 import numpy as np
-
 from scipy.sparse import (
     csr_matrix,
     hstack,
 )
-
-from sklearn.neighbors import NearestNeighbors
-
 from sentence_transformers import SentenceTransformer
+from sklearn.neighbors import NearestNeighbors
 
 
 class TechMindPredictor:
