@@ -1,0 +1,343 @@
+name: IndexMind CI
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      run_docker:
+        description: "Run the v1.2 Docker smoke test"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexmind-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHON_VERSION: "3.11"
+  WORKING_DIRECTORY: techmind-v2
+  V12_MODEL_PATH: models/experimental/v1.2.0-multilingual/techmind_hybrid_v1_2_0_multilingual.joblib
+  V12_REQUIREMENTS: deploy/v1.2.0-multilingual/requirements-v1.2.txt
+  TOKENIZERS_PARALLELISM: "false"
+  HF_HUB_DISABLE_TELEMETRY: "1"
+
+jobs:
+  # ===========================================================================
+  # 1. Stable / legacy layer
+  #    Fast checks for the existing Python packages and v1.1 fallback.
+  # ===========================================================================
+  quality-and-v11:
+    name: Quality + stable v1.1
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: ${{ env.WORKING_DIRECTORY }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: techmind-v2/pyproject.toml
+
+      - name: Upgrade packaging tools
+        run: python -m pip install --upgrade pip setuptools wheel
+
+      - name: Install stable dependencies and quality tools
+        run: |
+          python -m pip install \
+            "numpy>=1.26,<3" \
+            "pandas>=2.2,<3" \
+            "scipy>=1.12,<2" \
+            "scikit-learn>=1.5,<2" \
+            "joblib>=1.4,<2" \
+            "fastapi>=0.115,<1" \
+            "uvicorn[standard]>=0.30,<1" \
+            "pydantic>=2.7,<3" \
+            "pytest>=8,<9" \
+            "httpx>=0.27,<1" \
+            "ruff>=0.8,<1"
+
+      - name: Compile Python packages
+        run: |
+          python -m compileall -q \
+            techmind \
+            techmind_api \
+            techmind_v12 \
+            techmind_api_v12
+
+      - name: Ruff check v1.2 maintained code
+        run: |
+          python -m ruff check \
+            techmind_v12 \
+            techmind_api_v12 \
+            tests/v1.2
+
+      - name: Import stable v1.1 packages
+        run: |
+          python - <<'PY'
+          from techmind import TechMindPredictor
+          from techmind_api.main import app
+
+          assert TechMindPredictor is not None
+          assert app is not None
+          print("V11_IMPORT_OK")
+          PY
+
+      - name: Run historical pytest tests
+        run: python -m pytest tests -v --ignore=tests/v1.2
+
+      - name: Run standalone v1.1 smoke test when present
+        run: |
+          if [[ -f tests/smoke_test_v1_1.py ]]; then
+            python tests/smoke_test_v1_1.py
+          else
+            echo "tests/smoke_test_v1_1.py not present; skipping."
+          fi
+
+  # ===========================================================================
+  # 2. v1.2 artifact certification
+  #    Fast and independent from the MiniLM cache.
+  # ===========================================================================
+  v12-artifact-integrity:
+    name: v1.2 artifact integrity
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: ${{ env.WORKING_DIRECTORY }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: techmind-v2/pyproject.toml
+
+      - name: Upgrade packaging tools
+        run: python -m pip install --upgrade pip setuptools wheel
+
+      - name: Install artifact-test dependencies
+        run: |
+          python -m pip install \
+            "numpy>=1.26,<3" \
+            "scikit-learn>=1.5,<2" \
+            "joblib>=1.4,<2" \
+            "pytest>=8,<9"
+
+      - name: Verify v1.2 artifact exists
+        run: test -f "${V12_MODEL_PATH}"
+
+      - name: Run v1.2 artifact integrity tests
+        run: python -m pytest tests/v1.2/test_artifact_integrity.py -v
+
+  # ===========================================================================
+  # 3. Full v1.2 multilingual + API regression suite
+  #    Downloads MiniLM once and then verifies offline loading.
+  # ===========================================================================
+  v12-functional:
+    name: v1.2 multilingual + API
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    needs:
+      - v12-artifact-integrity
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: ${{ env.WORKING_DIRECTORY }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: |
+            techmind-v2/pyproject.toml
+            techmind-v2/deploy/v1.2.0-multilingual/requirements-v1.2.txt
+
+      - name: Restore MiniLM cache
+        id: hf-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-${{ runner.os }}-py311-paraphrase-multilingual-MiniLM-L12-v2-v1
+
+      - name: Upgrade packaging tools
+        run: python -m pip install --upgrade pip setuptools wheel
+
+      - name: Install CPU-only PyTorch
+        run: |
+          python -m pip install \
+            --index-url https://download.pytorch.org/whl/cpu \
+            "torch==2.13.0+cpu"
+
+      - name: Install v1.2 dependencies and test tools
+        run: |
+          python -m pip install -r "${V12_REQUIREMENTS}"
+          python -m pip install \
+            "pytest>=8,<9" \
+            "httpx>=0.27,<1"
+
+      - name: Cache MiniLM when missing
+        if: steps.hf-cache.outputs.cache-hit != 'true'
+        env:
+          HF_HUB_OFFLINE: "0"
+          TRANSFORMERS_OFFLINE: "0"
+        run: |
+          python - <<'PY'
+          from sentence_transformers import SentenceTransformer
+
+          name = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+          model = SentenceTransformer(name)
+
+          dimension = model.get_sentence_embedding_dimension()
+          assert dimension == 384, dimension
+
+          print("MINILM_CACHE_OK")
+          print("embedding_dimension =", dimension)
+          PY
+
+      - name: Verify MiniLM offline loading
+        env:
+          HF_HUB_OFFLINE: "1"
+          TRANSFORMERS_OFFLINE: "1"
+        run: |
+          python - <<'PY'
+          from sentence_transformers import SentenceTransformer
+
+          name = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+          model = SentenceTransformer(name, local_files_only=True)
+
+          dimension = model.get_sentence_embedding_dimension()
+          assert dimension == 384, dimension
+
+          print("MINILM_OFFLINE_OK")
+          print("embedding_dimension =", dimension)
+          PY
+
+      - name: Run complete v1.2 tests
+        env:
+          HF_HUB_OFFLINE: "1"
+          TRANSFORMERS_OFFLINE: "1"
+        run: python -m pytest tests/v1.2 -v
+
+  # ===========================================================================
+  # 4. Docker deployment certification
+  #    Intentionally heavy: only release tags or explicit manual execution.
+  # ===========================================================================
+  docker-v12:
+    name: v1.2 Docker smoke
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    needs:
+      - quality-and-v11
+      - v12-functional
+
+    if: >-
+      startsWith(github.ref, 'refs/tags/v') ||
+      (github.event_name == 'workflow_dispatch' && inputs.run_docker == true)
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: ${{ env.WORKING_DIRECTORY }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python for smoke client
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install smoke-client dependencies
+        run: python -m pip install "httpx>=0.27,<1" "requests>=2.31,<3"
+
+      - name: Show Docker versions
+        run: |
+          docker --version
+          docker compose version
+
+      - name: Build v1.2 CPU image
+        run: |
+          docker build \
+            --progress=plain \
+            -f deploy/v1.2.0-multilingual/docker/Dockerfile \
+            -t techmind:v1.2.0-multilingual \
+            .
+
+      - name: Start v1.2 service
+        run: |
+          docker compose \
+            -f deploy/v1.2.0-multilingual/docker/compose.yaml \
+            up -d
+
+      - name: Show initial container status
+        run: |
+          docker compose \
+            -f deploy/v1.2.0-multilingual/docker/compose.yaml \
+            ps
+
+      - name: Wait for API readiness
+        run: |
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:8000/health > /tmp/health.json; then
+              cat /tmp/health.json
+              echo
+              echo "API_READY"
+              exit 0
+            fi
+
+            echo "Waiting for API... attempt ${attempt}/30"
+            sleep 5
+          done
+
+          echo "API did not become ready in time."
+          exit 1
+
+      - name: Run Docker smoke test
+        run: python deploy/v1.2.0-multilingual/docker/smoke_test_docker.py
+
+      - name: Print Docker logs on failure
+        if: failure()
+        run: |
+          docker compose \
+            -f deploy/v1.2.0-multilingual/docker/compose.yaml \
+            logs --no-color || true
+
+      - name: Shut down containers
+        if: always()
+        run: |
+          docker compose \
+            -f deploy/v1.2.0-multilingual/docker/compose.yaml \
+            down -v --remove-orphans || true
