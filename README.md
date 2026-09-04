@@ -1127,10 +1127,10 @@ Incluso después de optimizar `LinearSVC`, el mejor resultado MiniLM-only fue ap
 F1 Macro CV = 0.7764
 ```
 
-frente al baseline léxico de v1.1:
+frente al baseline oficial de v1.1:
 
 ```text
-F1 Macro CV = 0.8432
+F1 Macro CV = 0.8493
 ```
 
 Conclusión:
@@ -1193,18 +1193,20 @@ F1 Macro         0.8753
 F1 Weighted      0.8749
 ```
 
-Comparación contra v1.1:
+Comparación contra los resultados oficiales de v1.1:
 
 ```text
 F1 Macro CV:
-0.8432 → 0.8574
+0.8493 → 0.8574   (Δ +0.0081)
 
 Accuracy Test:
-0.8386 → 0.8746
+0.8430 → 0.8746   (Δ +0.0316)
 
 F1 Macro Test:
-0.8401 → 0.8753
+0.8441 → 0.8753   (Δ +0.0312)
 ```
+
+> Nota de consistencia: los valores `0.8386 / 0.8401` corresponden a v1.0.0 y no deben utilizarse como baseline de v1.1.0.
 
 ### 7. Benchmark multilingual de desarrollo
 
