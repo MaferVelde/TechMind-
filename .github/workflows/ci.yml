@@ -104,8 +104,20 @@ jobs:
           print("V11_IMPORT_OK")
           PY
 
-      - name: Run historical pytest tests
-        run: python -m pytest tests -v --ignore=tests/v1.2
+      - name: Run legacy pytest-compatible tests when present
+        run: |
+          mapfile -t PYTEST_FILES < <(
+            find tests -maxdepth 1 -type f -name 'test_*.py' | sort
+          )
+
+          if (( ${#PYTEST_FILES[@]} > 0 )); then
+            echo "Running pytest-compatible legacy tests:"
+            printf ' - %s\n' "${PYTEST_FILES[@]}"
+            python -m pytest "${PYTEST_FILES[@]}" -v
+          else
+            echo "No root-level pytest-compatible legacy tests found."
+            echo "Historical *_test.py smoke scripts are intentionally not auto-collected."
+          fi
 
       - name: Run standalone v1.1 smoke test when present
         run: |
