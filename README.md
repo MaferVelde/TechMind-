@@ -1,308 +1,164 @@
-<div align="center">
+# 🚀 IndexMind
 
-# 🧠 TechMind
+### Clasificación inteligente y multilingual de contenido técnico con Machine Learning y NLP
 
-### Clasificación inteligente de contenido técnico con Machine Learning y NLP
+**Java 17 · Spring Boot · Python 3.11 · FastAPI · Scikit-Learn · Sentence Transformers · Docker**
 
-[![Version](https://img.shields.io/badge/version-1.1.0-blue?style=for-the-badge)](https://github.com/TU_USUARIO/techmind-v2/releases)
-[![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge\&logo=python\&logoColor=white)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-1.0.0-009688?style=for-the-badge\&logo=fastapi\&logoColor=white)](https://fastapi.tiangolo.com/)
-[![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-F7931E?style=for-the-badge\&logo=scikitlearn\&logoColor=white)](https://scikit-learn.org/)
-[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge\&logo=docker\&logoColor=white)](https://www.docker.com/)
-
-[![CI](https://img.shields.io/github/actions/workflow/status/TU_USUARIO/techmind-v2/ci.yml?branch=main\&style=for-the-badge\&label=CI\&logo=githubactions\&logoColor=white)](https://github.com/TU_USUARIO/techmind-v2/actions)
-[![License](https://img.shields.io/github/license/TU_USUARIO/techmind-v2?style=for-the-badge)](LICENSE)
-[![Model](https://img.shields.io/badge/Model-v1.1.0-success?style=for-the-badge)](#-techmind-v110)
-[![API](https://img.shields.io/badge/API-Compatible%201.0.0-009688?style=for-the-badge)](#-api-rest)
-
-**Machine Learning · NLP · FastAPI · Docker · Monitoring · OCI**
-
-</div>
+[![Model](https://img.shields.io/badge/model-v1.2.0--multilingual-6f42c1)](#-versión-actual)
+[![Status](https://img.shields.io/badge/status-validated__experimental__candidate-f0ad4e)](#-versión-actual)
+[![Stable](https://img.shields.io/badge/stable%20fallback-v1.1.0-2ea44f)](#-historial-y-evolución-del-modelo)
+[![Docker](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white)](#-deployment)
+[![FastAPI](https://img.shields.io/badge/FastAPI-1.2.0-009688?logo=fastapi&logoColor=white)](#-api-del-modelo)
 
 ---
 
-TechMind es una solución de **Machine Learning y Procesamiento de Lenguaje Natural (NLP)** desarrollada para organizar y clasificar automáticamente contenido tecnológico.
+## 🌐 Proyecto en línea
 
-El sistema recibe títulos, publicaciones, artículos o fragmentos de contenido técnico y los clasifica en una de cuatro categorías:
-
-|     Categoría    | Dominio                                                    |
-| :--------------: | ---------------------------------------------------------- |
-|   🖥️ `backend`  | APIs, Java, Spring, servidores, servicios y bases de datos |
-|    ☁️ `cloud`    | AWS, OCI, Azure, Docker, Kubernetes e infraestructura      |
-| 📊 `datascience` | Python, Machine Learning, IA y análisis de datos           |
-|   🎨 `frontend`  | JavaScript, React, CSS e interfaces web                    |
-
-La solución cubre el ciclo completo de un proyecto de Machine Learning:
-
-**datos → preparación → modelado → evaluación → explicabilidad → API → monitoreo → deployment**
+- **Sitio web:** https://indexmind.tech/
+- **Swagger / Backend:** http://techmind-g9.duckdns.org:8080/swagger-ui.html
+- **Video del proyecto:** https://youtu.be/SVoUxwqGgHk?si=PsR6FFC_BFSAABB3
 
 ---
 
-# 🔄 Pipeline de TechMind
+# 🧠 ¿Qué es IndexMind?
+
+**IndexMind** es una solución orientada a organizar y clasificar automáticamente contenido técnico mediante Machine Learning y Procesamiento de Lenguaje Natural.
+
+El sistema recibe títulos, publicaciones, artículos o fragmentos de contenido y los clasifica en una de cuatro categorías:
+
+| Categoría | Dominio |
+|---|---|
+| 🖥️ `backend` | APIs, Java, Spring, servicios, servidores y lógica backend |
+| ☁️ `cloud` | AWS, OCI, Azure, Docker, Kubernetes e infraestructura |
+| 📊 `datascience` | Python, Machine Learning, IA, NLP y análisis de datos |
+| 🎨 `frontend` | JavaScript, React, CSS, interfaces y desarrollo web |
+
+La versión más reciente incorpora capacidad **multilingual** evaluada en:
+
+```text
+Español
+Inglés
+Ruso
+Español + Inglés
+```
+
+---
+
+# 🎯 Problema
+
+El crecimiento constante del contenido técnico hace cada vez más difícil:
+
+- localizar información relevante;
+- organizar repositorios de conocimiento;
+- reutilizar recursos técnicos;
+- mantener una clasificación consistente;
+- trabajar con contenido en varios idiomas;
+- decidir cuándo una clasificación automática es suficientemente confiable.
+
+IndexMind busca convertir información técnica dispersa en conocimiento estructurado y reutilizable.
+
+---
+
+# 💡 Solución
+
+IndexMind combina:
+
+```text
+clasificación automática
++
+representación léxica
++
+representación semántica multilingual
++
+controles operativos
++
+API REST
++
+deployment Docker
+```
+
+La solución no se limita a devolver una categoría.
+
+También evalúa si la predicción debe:
+
+```text
+accepted
+review
+rejected_ood
+rejected_invalid
+```
+
+---
+
+# 🧱 Arquitectura general
 
 ```mermaid
-flowchart LR
-    A["📥 Datos<br/>5,000 registros"] --> B["🧹 Preparación<br/>y validación"]
+flowchart TD
+    A["Cliente / Frontend"] -->|HTTP + JSON| B["Backend IndexMind<br/>Java 17 + Spring Boot"]
+    B -->|REST| C["Microservicio Data Science<br/>Python 3.11 + FastAPI"]
 
-    B --> C["📝 Dataset final<br/>4,583 registros"]
+    C --> D["TF-IDF Word"]
+    C --> E["TF-IDF Character"]
+    C --> F["MiniLM Multilingual<br/>384 dimensiones"]
 
-    C --> D["🔤 TF-IDF<br/>Word"]
-    C --> E["🔡 TF-IDF<br/>Char 3-6"]
+    D --> G["Concatenación híbrida"]
+    E --> G
+    F --> G
 
-    D --> F["🔗 FeatureUnion<br/>60,000 features"]
-    E --> F
+    G --> H["LinearSVC<br/>C = 0.3"]
+    H --> I["Semantic Domain Support<br/>5-NN cosine"]
+    I --> J["Decision Margin"]
+    J --> K{"decision"}
 
-    F --> G["🤖 SGDClassifier<br/>optimizado"]
-
-    G --> H{"🎯 Predicción"}
-
-    H --> I["🖥️ backend"]
-    H --> J["☁️ cloud"]
-    H --> K["📊 datascience"]
-    H --> L["🎨 frontend"]
-
-    G --> M["🔎 Explicabilidad"]
-    G --> N["⚖️ Control operacional"]
-
-    N --> O["✅ aceptada"]
-    N --> P["👁️ revisión"]
-    N --> Q["⛔ rechazada"]
-
-    O --> R["🌐 FastAPI"]
-    P --> R
-    Q --> R
-
-    R --> S["📡 Monitoring"]
-    S --> T["🐳 Docker"]
-    T --> U["☁️ OCI / Producción"]
+    K -->|accepted| L["Clasificación aceptada"]
+    K -->|review| M["Revisión"]
+    K -->|rejected_ood| N["Bajo soporte semántico"]
+    K -->|rejected_invalid| O["Entrada inválida"]
 ```
 
 ---
 
-# 🧩 Arquitectura del modelo v1.1.0
+# 🔄 Historial y evolución del modelo
 
-La versión actual combina dos representaciones TF-IDF complementarias:
+IndexMind conserva las versiones anteriores para mantener trazabilidad técnica y mostrar la evolución del proyecto.
 
-```mermaid
-flowchart TB
-    A["📄 Texto técnico"]
+## v1.0.0 — Primera versión productiva
 
-    A --> B["TF-IDF Word"]
-    A --> C["TF-IDF Char"]
-
-    B --> B1["Normalización Unicode"]
-    B1 --> B2["Stopwords controladas"]
-    B2 --> B3["30,000 features"]
-
-    C --> C1["char_wb"]
-    C1 --> C2["N-gramas 3–6"]
-    C2 --> C3["30,000 features"]
-
-    B3 --> D["FeatureUnion"]
-    C3 --> D
-
-    D --> E["60,000 features"]
-
-    E --> F["SGDClassifier optimizado"]
-
-    F --> G["backend"]
-    F --> H["cloud"]
-    F --> I["datascience"]
-    F --> J["frontend"]
-```
-
-### Arquitectura resumida
-
-```text
-                         ┌──────────────────────┐
-                         │    TF-IDF Word      │
-                         │                      │
-                         │ Unicode + Stopwords │
-                         │ 30,000 features     │
-                         └──────────┬───────────┘
-                                    │
-                                    ▼
-Texto ───────────────────────► FeatureUnion
-                                    ▲
-                                    │
-                         ┌──────────┴───────────┐
-                         │    TF-IDF Char      │
-                         │                      │
-                         │    n-grams 3–6      │
-                         │ 30,000 features     │
-                         └──────────────────────┘
-                                    │
-                                    ▼
-                             60,000 features
-                                    │
-                                    ▼
-                         SGDClassifier optimizado
-                                    │
-                                    ▼
-                 ┌──────────┬───────────┬─────────────┐
-                 ▼          ▼           ▼             ▼
-              backend     cloud    datascience     frontend
-```
-
----
-
-# 📌 Estado del proyecto
-
-| Componente                      | Estado |
-| ------------------------------- | :----: |
-| Dataset procesado               |    ✅   |
-| Pipeline de preparación         |    ✅   |
-| Modelo v1.0.0                   |    ✅   |
-| **Modelo v1.1.0**               |    ✅   |
-| Evaluación sobre test reservado |    ✅   |
-| Explicabilidad                  |    ✅   |
-| Robustez                        |    ✅   |
-| Calibración operacional         |    ✅   |
-| Predictor productivo            |    ✅   |
-| FastAPI                         |    ✅   |
-| Smoke Tests                     |    ✅   |
-| Monitoreo                       |    ✅   |
-| Docker                          |    ✅   |
-| Preparación para OCI            |    ✅   |
-| Documentación                   |    ✅   |
-
-### Versiones actuales
-
-```text
-Package:       1.1.0
-Model:         1.1.0
-API interface: 1.0.0
-```
-
-> **Nota:** la interfaz REST permanece en `1.0.0` para mantener compatibilidad con las integraciones desarrolladas para la versión anterior.
-
----
-
-# 📊 Resultados principales
-
-| Métrica         | v1.0.0 | **v1.1.0** |
-| --------------- | -----: | ---------: |
-| F1 Macro Test   | 0.8401 | **0.8441** |
-| Accuracy Test   | 0.8386 | **0.8430** |
-| Precision Macro | 0.8445 | **0.8455** |
-| Recall Macro    | 0.8385 | **0.8434** |
-| F1 Weighted     | 0.8397 | **0.8435** |
-
-### Rendimiento operacional v1.1.0
-
-| Métrica                            |  Resultado |
-| ---------------------------------- | ---------: |
-| F1 Macro CV                        | **0.8493** |
-| F1 Macro Test                      | **0.8441** |
-| Accuracy de predicciones aceptadas | **95.08%** |
-| Tasa revisión/rechazo              | **26.83%** |
-| Captura de errores                 | **77.08%** |
-| Casos externos correctos           |    **9/9** |
-| Casos externos sin cobertura       |      **0** |
-
----
-
-# 🎯 Objetivo
-
-El objetivo principal de TechMind es construir un sistema capaz de:
-
-* clasificar contenido técnico automáticamente;
-* identificar la categoría tecnológica predominante;
-* reducir el trabajo manual de organización;
-* detectar predicciones ambiguas;
-* identificar entradas con baja cobertura;
-* proporcionar explicaciones sobre las decisiones del modelo;
-* permitir revisión humana cuando sea necesario;
-* exponer el modelo mediante una API REST;
-* monitorear cambios en los datos y comportamiento del modelo;
-* facilitar su integración con aplicaciones externas.
-
----
-
-# 🗂️ Categorías
-
-TechMind trabaja actualmente con cuatro clases:
-
-| Categoría     | Descripción                                                                      |
-| ------------- | -------------------------------------------------------------------------------- |
-| `backend`     | APIs, Java, Spring, servidores, bases de datos, servicios y arquitectura backend |
-| `cloud`       | AWS, OCI, Azure, Kubernetes, Docker, infraestructura y servicios cloud           |
-| `datascience` | Python, Machine Learning, análisis de datos, IA y modelos predictivos            |
-| `frontend`    | JavaScript, React, CSS, interfaces y desarrollo web frontend                     |
-
----
-
-# 📊 Dataset
-
-El dataset original utilizado durante el desarrollo contiene aproximadamente:
-
-```text
-5,000 registros
-4 categorías
-```
-
-Las clases originalmente se encontraban distribuidas de forma balanceada.
-
-Durante el pipeline de calidad se realizaron, entre otras, las siguientes operaciones:
-
-* normalización textual;
-* limpieza de títulos y contenido;
-* detección de documentos vacíos;
-* identificación de categorías contradictorias;
-* resolución de conflictos;
-* detección de duplicados;
-* eliminación de registros duplicados;
-* ingeniería de características;
-* validación integral;
-* generación de variantes textuales.
-
-Después del proceso de preparación:
-
-```text
-Registros finales: 4,583
-Clases: 4
-Balance ratio: 0.946
-Documentos vacíos: 0
-Nulos críticos: 0
-Infinitos: 0
-Duplicados textuales residuales: 0
-Categorías contradictorias residuales: 0
-```
-
----
-
-# 🔬 Evolución del modelo
-
-## v1.0.0
-
-La primera versión productiva utilizó:
+La primera versión utilizó:
 
 ```text
 TF-IDF Word
-      │
-      ▼
+      ↓
 SGDClassifier optimizado
 ```
 
-El modelo final utilizó hasta:
+Características principales:
 
-```text
-30,000 características TF-IDF
-```
+- TF-IDF basado en palabras;
+- hasta 30,000 características;
+- predictor productivo;
+- FastAPI;
+- explicabilidad;
+- pruebas de robustez;
+- monitoreo;
+- Docker;
+- preparación para deployment.
 
 ### Resultados v1.0.0
 
-| Métrica         |  Resultado |
-| --------------- | ---------: |
-| Accuracy        |     0.8386 |
-| Precision Macro |     0.8445 |
-| Recall Macro    |     0.8385 |
-| F1 Macro        | **0.8401** |
-| F1 Weighted     |     0.8397 |
+| Métrica | Resultado |
+|---|---:|
+| Accuracy | 0.8386 |
+| Precision Macro | 0.8445 |
+| Recall Macro | 0.8385 |
+| F1 Macro | 0.8401 |
+| F1 Weighted | 0.8397 |
 
-Esta versión demostró una buena capacidad de generalización, pero durante las pruebas de integración se detectó una limitación importante en algunos textos técnicos cortos.
+### Limitación detectada
 
-Por ejemplo, contenido relacionado con:
+Durante integración se observaron dificultades con algunos textos técnicos cortos, especialmente cuando el vocabulario completo por palabras tenía poca cobertura.
+
+Ejemplos:
 
 ```text
 Spring Boot
@@ -313,376 +169,556 @@ servicios
 repositorios
 ```
 
-podía presentar cobertura limitada en el vocabulario Word y generar clasificaciones incorrectas.
-
-Este comportamiento motivó el desarrollo de **TechMind v1.1.0**.
+Este comportamiento motivó el desarrollo de v1.1.0.
 
 ---
 
-# 🚀 TechMind v1.1.0
+## v1.1.0 — Word + Character TF-IDF
 
-La nueva versión incorpora una arquitectura híbrida basada en palabras y caracteres.
+v1.1 amplió la representación léxica mediante dos ramas:
 
 ```text
                          ┌──────────────────────┐
-                         │   TF-IDF Word       │
-                         │                      │
-Texto ──────────────────►│ Unicode + Stopwords │
-                         │ 30,000 features      │
+                         │    TF-IDF Word      │
+Texto ─────────────────►│ Unicode + Stopwords │
+                         │ 30,000 features     │
                          └──────────┬───────────┘
-                                    │
                                     │
                                     ▼
                               FeatureUnion
-                                    │
                                     ▲
                                     │
                          ┌──────────┴───────────┐
-                         │   TF-IDF Char       │
-Texto ──────────────────►│   n-grams 3–6      │
-                         │ 30,000 features      │
+                         │    TF-IDF Char      │
+                         │    n-grams 3–6      │
+                         │ 30,000 features     │
                          └──────────────────────┘
                                     │
                                     ▼
-                         SGDClassifier optimizado
+                              60,000 features
                                     │
                                     ▼
-                 backend / cloud / datascience / frontend
+                           SGDClassifier
 ```
 
-## Características principales
+### Mejoras de v1.1
 
-### Rama Word
+- normalización Unicode;
+- stopwords controladas;
+- TF-IDF Word;
+- TF-IDF Character;
+- char n-grams 3–6;
+- mejor cobertura en textos técnicos cortos;
+- calibración operacional;
+- explicabilidad Word/Char;
+- mantenimiento de compatibilidad con la API anterior.
 
-Incluye:
+### Resultados v1.1.0
 
-* normalización Unicode;
-* eliminación controlada de stopwords en español;
-* n-gramas de palabras;
-* vocabulario técnico;
-* hasta `30,000` características.
+| Métrica | Resultado |
+|---|---:|
+| F1 Macro CV | 0.8493 |
+| F1 Macro Test | 0.8441 |
+| Accuracy Test | 0.8430 |
+| Precision Macro | 0.8455 |
+| Recall Macro | 0.8434 |
+| F1 Weighted | 0.8435 |
 
-### Rama Char
+### Rendimiento operacional v1.1
 
-Incluye:
+| Métrica | Resultado |
+|---|---:|
+| Accuracy de predicciones aceptadas | 95.08% |
+| Tasa revisión/rechazo | 26.83% |
+| Captura de errores | 77.08% |
+| Casos externos correctos | 9/9 |
+| Casos externos sin cobertura | 0 |
+
+### Integridad v1.1
+
+SHA-256:
 
 ```text
-char n-grams: 3–6
+756b2577e731336ead95852ee1d8d752408762478a23d0bbf42cc9537e136ff6
 ```
 
-y hasta:
+> **v1.1.0 se conserva como baseline estable y fallback.**
+
+---
+
+## v1.2.0-multilingual — Arquitectura híbrida léxica + semántica
+
+La versión v1.2 amplía el proyecto hacia clasificación multilingual.
+
+Estado:
 
 ```text
-30,000 características
+validated_experimental_candidate
 ```
 
-Esto permite reconocer patrones como:
+Arquitectura:
 
 ```text
-spring
-api
-java
-kubernetes
-react
-python
-docker
+Texto
+ │
+ ├── TF-IDF Word
+ ├── TF-IDF Character
+ └── MiniLM Multilingual (384)
+          │
+          ▼
+     Concatenación
+          │
+          ▼
+      LinearSVC
+        C = 0.3
+          │
+          ▼
+ Semantic Domain Support
+          │
+          ▼
+    Decision Margin
+          │
+          ▼
+ accepted / review /
+ rejected_ood / rejected_invalid
 ```
 
-incluso cuando la representación completa por palabras tiene poca cobertura.
-
-### Total
+Modelo de embeddings:
 
 ```text
-Word features: 30,000
-Char features: 30,000
-Total:         60,000
+sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+```
+
+Dimensión:
+
+```text
+384
+```
+
+Clasificador:
+
+```text
+LinearSVC
+C = 0.3
+```
+
+Espacio total:
+
+```text
+60,384 características
 ```
 
 ---
 
-# 📈 Resultados v1.1.0
+# 📌 Versión actual
 
-La versión final fue evaluada sobre un conjunto de test reservado de **917 documentos**.
+| Componente | Versión / estado |
+|---|---|
+| Solución | IndexMind |
+| Modelo estable de fallback | `v1.1.0` |
+| Modelo multilingual | `v1.2.0-multilingual` |
+| Estado v1.2 | `validated_experimental_candidate` |
+| API del modelo v1.2 | `1.2.0` |
+| Clasificador | `LinearSVC` |
+| C | `0.3` |
+| Embeddings | MiniLM multilingual |
+| Dimensión semántica | `384` |
 
-| Métrica              |   Resultado |
-| -------------------- | ----------: |
-| F1 Macro CV          |  **0.8493** |
-| F1 Macro Test        |  **0.8441** |
-| Accuracy Test        |  **0.8430** |
-| Precision Macro      |  **0.8455** |
-| Recall Macro         |  **0.8434** |
-| F1 Weighted          |  **0.8435** |
-| Diferencia Test − CV | **-0.0052** |
+> v1.2 es la evolución más reciente del proyecto, mientras que v1.1 permanece disponible como baseline estable y mecanismo de rollback.
 
-La diferencia entre validación cruzada y test reservado indica una generalización consistente.
+---
 
-### Rendimiento operacional
+# 🌐 Soporte multilingual
 
-| Métrica                                        |  Resultado |
-| ---------------------------------------------- | ---------: |
-| Accuracy de predicciones aceptadas             | **95.08%** |
-| Tasa revisión/rechazo                          | **26.83%** |
-| Captura de errores                             | **77.08%** |
-| Documentos externos correctamente clasificados |    **9/9** |
-| Casos externos sin cobertura                   |      **0** |
+La versión v1.2 fue evaluada en:
 
-Comparación:
+| Código | Idioma |
+|---|---|
+| `en` | Inglés |
+| `es` | Español |
+| `ru` | Ruso |
+| `es_en` | Español + Inglés |
+
+La misma taxonomía se conserva en todos los idiomas:
 
 ```text
-F1 Macro Test v1.0.0: 0.8401
-F1 Macro Test v1.1.0: 0.8441
-Mejora absoluta:      +0.0040
+backend
+cloud
+datascience
+frontend
 ```
 
 ---
 
-# 🧪 Calibración operacional
+# 🛡️ Controles operativos v1.2
 
-TechMind no se limita a devolver una categoría.
+## 1. Semantic Domain Support
 
-El sistema determina también si la predicción puede utilizarse automáticamente.
-
-Los posibles estados son:
+El embedding de cada entrada se compara con referencias semánticas del dominio técnico mediante:
 
 ```text
-aceptada
-revision
-rechazada
+NearestNeighbors
+n_neighbors = 5
+metric = cosine
 ```
 
-## `aceptada`
+Métrica:
 
-La predicción posee suficiente evidencia para ser utilizada automáticamente.
-
-```json
-{
-  "estado": "aceptada",
-  "requiere_revision": false,
-  "prediccion_utilizable": true
-}
+```text
+domain_similarity_5nn
 ```
 
-## `revision`
+Threshold congelado:
 
-Existe una clasificación, pero el sistema recomienda revisión humana.
-
-```json
-{
-  "estado": "revision",
-  "requiere_revision": true,
-  "prediccion_utilizable": true
-}
+```text
+0.4266
 ```
-
-## `rechazada`
-
-La entrada no presenta suficiente cobertura para utilizar la predicción.
-
-```json
-{
-  "estado": "rechazada",
-  "prediccion_utilizable": false
-}
-```
-
-Los umbrales operacionales fueron calibrados utilizando predicciones **Out-of-Fold de 5 folds** sobre el conjunto de entrenamiento.
 
 ---
 
-# 🔎 Cobertura Word + Char
+## 2. Decision Margin
 
-En v1.1.0 la cobertura ya no depende exclusivamente del vocabulario de palabras.
-
-Se calcula como:
+Se calcula:
 
 ```text
-features_activas_total =
-word_features_activas
-+
-char_features_activas
+decision_margin = score_top1 - score_top2
 ```
 
-Por ejemplo:
+Threshold:
 
 ```text
-word_features_activas = 0
-char_features_activas = 215
-features_activas_total = 215
+0.8132
 ```
 
-continúa siendo una entrada válida.
+---
 
-Por compatibilidad con v1.0.0, el campo:
+## Regla operacional
 
 ```text
-terminos_activos
+Entrada válida?
+  ├── No → rejected_invalid
+  └── Sí
+       ↓
+domain_similarity_5nn >= 0.4266?
+  ├── No → rejected_ood
+  └── Sí
+       ↓
+decision_margin >= 0.8132?
+  ├── No → review
+  └── Sí → accepted
 ```
 
-se mantiene como alias del total de características activas.
+Backend debe utilizar:
+
+```text
+decision
+```
+
+como autoridad operacional.
 
 ---
 
 # ⚠️ Scores y probabilidades
 
-Los valores:
+El clasificador final utiliza `LinearSVC`.
+
+Por lo tanto:
 
 ```text
-puntuacion_ganadora
-puntuacion_segunda
-margen_decision
+score_top1
+score_top2
+decision_margin
 ```
 
-son **scores del clasificador**, no probabilidades.
+son **scores de decisión**, no probabilidades calibradas.
 
-Por esta razón la API devuelve:
-
-```json
-{
-  "margin_is_probability": false
-}
-```
-
-Un margen de:
+Un valor como:
 
 ```text
-0.98
+1.58
 ```
 
-no debe interpretarse como:
+no significa:
 
 ```text
-98%
+158% de confianza
+```
+
+La API no debe presentar estos valores bajo nombres como `probabilidad`.
+
+---
+
+# 🧪 Evaluación v1.2
+
+## Test original
+
+Conjunto:
+
+```text
+917 documentos
+```
+
+| Métrica | Resultado |
+|---|---:|
+| Accuracy | **0.8746** |
+| Precision Macro | **0.8763** |
+| Recall Macro | **0.8749** |
+| F1 Macro | **0.8753** |
+| F1 Weighted | **0.8749** |
+
+---
+
+# 🌍 Benchmark multilingual final independiente
+
+Después de congelar arquitectura, hiperparámetros y thresholds, v1.2 fue evaluado sobre un benchmark independiente.
+
+Diseño:
+
+```text
+320 documentos
+80 casos semánticos
+4 idiomas
+4 categorías
+```
+
+Resultado global:
+
+```text
+244 / 320 correctos
+```
+
+| Métrica | Resultado |
+|---|---:|
+| Accuracy | **0.7625** |
+| Precision Macro | **0.8167** |
+| Recall Macro | **0.7625** |
+| F1 Macro | **0.7570** |
+| F1 Weighted | **0.7570** |
+
+---
+
+## Rendimiento por idioma
+
+| Idioma | Accuracy |
+|---|---:|
+| Inglés | **0.7750** |
+| Español | **0.7500** |
+| Español/Inglés | **0.7875** |
+| Ruso | **0.7375** |
+
+---
+
+## Rendimiento por categoría
+
+| Categoría | Accuracy |
+|---|---:|
+| Backend | **0.9000** |
+| Cloud | **0.4000** |
+| Data Science | **0.8375** |
+| Frontend | **0.9125** |
+
+---
+
+# 📊 Evolución multilingual v1.1 → v1.2
+
+Evaluados sobre el mismo benchmark final:
+
+| Modelo | Accuracy | F1 Macro |
+|---|---:|---:|
+| v1.1 | 0.5656 | 0.5705 |
+| v1.2 multilingual | **0.7625** | **0.7570** |
+
+Mejora absoluta en Accuracy:
+
+```text
++0.1969
+≈ +19.69 puntos porcentuales
+```
+
+Mejora absoluta en F1 Macro:
+
+```text
++0.1864
 ```
 
 ---
 
-# 🔍 Explicabilidad
+# 🚦 Rendimiento operacional final
 
-TechMind permite solicitar información sobre las características que influyeron en una predicción.
+Aplicando simultáneamente Semantic Domain Support y Decision Margin:
 
-La respuesta puede incluir:
+| Estado / métrica | Resultado |
+|---|---:|
+| Accepted | 120 |
+| Review | 160 |
+| Rejected OOD | 40 |
+| Coverage | **37.50%** |
+| Accepted Accuracy | **91.67%** |
+| Error Capture | **86.84%** |
+| Accepted Errors | 10 |
 
-```text
-positive_terms
-negative_terms
-differential_terms
-```
-
-En v1.1.0 se incluye también:
-
-```text
-feature_type
-```
-
-para identificar si una característica proviene de:
-
-```text
-word
-```
-
-o:
-
-```text
-char
-```
-
-Ejemplo:
-
-```json
-{
-  "term": "spring",
-  "feature_type": "char",
-  "tfidf": 0.0759,
-  "coefficient": 0.4744,
-  "contribution": 0.0360
-}
-```
-
-Las contribuciones describen el comportamiento matemático del modelo y **no representan causalidad**.
+Esto permite operar de forma conservadora y reducir la aceptación automática de predicciones incorrectas.
 
 ---
 
-# 🧱 Estructura del proyecto
+# ⚠️ Limitación conocida: Cloud ↔ Backend
+
+La principal limitación identificada corresponde a la categoría:
+
+```text
+cloud
+```
+
+Accuracy:
+
+```text
+0.4000
+```
+
+Entre los 80 ejemplos Cloud del benchmark final:
+
+```text
+Predicho backend      42
+Predicho cloud        32
+Predicho datascience   6
+```
+
+La principal confusión es:
+
+```text
+cloud → backend
+```
+
+Esta limitación se asocia principalmente a:
+
+- frontera conceptual entre ambas categorías;
+- cobertura del corpus;
+- contenido Cloud con fuerte componente backend.
+
+No debe corregirse mediante reglas manuales como:
+
+```text
+si contiene "AWS" → cloud
+si contiene "Docker" → cloud
+si contiene "API" → backend
+```
+
+Una futura v1.3 deberá abordar este problema mediante nuevos datos, entrenamiento y validación independiente.
+
+---
+
+# 🧪 Dataset y preparación
+
+Dataset original:
+
+```text
+5,000 registros
+1,250 por clase
+```
+
+Después del proceso de validación y limpieza:
+
+```text
+4,583 registros finales
+```
+
+Procesos relevantes:
+
+```text
+27 grupos conflictivos
+78 filas involucradas
+339 duplicados eliminados
+```
+
+Split:
+
+```text
+Train = 3,666
+Test  = 917
+```
+
+---
+
+# 📂 Estructura del proyecto
 
 ```text
 techmind-v2/
 │
-├── .github/
-│   └── workflows/
-│       └── ci.yml
-│
-├── artifacts/
-│   ├── v1.0.0/
-│   └── v1.1.0/
-│
 ├── data/
 │   ├── raw/
-│   ├── audit/
-│   └── processed/
+│   ├── processed/
+│   └── evaluation/
+│       ├── multilingual_benchmark.csv
+│       └── multilingual_final_benchmark_v1.csv
 │
-├── deployment/
+├── models/
+│   ├── v1.0.0/
+│   ├── v1.1.0/
+│   └── experimental/
+│       └── v1.2.0-multilingual/
+│           └── techmind_hybrid_v1_2_0_multilingual.joblib
 │
-├── docs/
-│   ├── versions/
-│   │   ├── v1.0.0/
-│   │   └── v1.1.0/
-│   └── images/
+├── techmind/
+│   └── predictor.py
 │
-├── examples/
+├── techmind_v12/
+│   └── predictor.py
 │
-├── monitoring/
-│   ├── config/
-│   ├── batches/
-│   └── logs/
+├── techmind_api/
+│   ├── main.py
+│   └── schemas.py
+│
+├── techmind_api_v12/
+│   ├── main.py
+│   └── schemas.py
 │
 ├── notebooks/
 │   ├── 01_eda_preparacion_datos.ipynb
 │   ├── 02_variantes_textuales_splits.ipynb
 │   ├── 03_modelado_seleccion.ipynb
 │   ├── 04_evaluacion_explicabilidad_empaquetado.ipynb
-│   └── 05_modelo_v1.1.0/
+│   ├── 05_modelo_v1.1.0/
+│   ├── 06_evaluacion_multilingue.ipynb
+│   └── v1.2.0-multilingual/
+│
+├── docs/
+│   └── versions/
+│       ├── v1.0.0/
+│       ├── v1.1.0/
+│       └── v1.2.0-multilingual/
+│           ├── README.md
+│           ├── architecture.md
+│           ├── model_card.md
+│           ├── evaluation.md
+│           ├── multilingual_validation.md
+│           ├── operational_controls.md
+│           └── deployment.md
 │
 ├── reports/
-│   ├── evaluation/
-│   ├── explainability/
-│   ├── robustness/
-│   ├── monitoring/
-│   ├── deployment/
-│   ├── final/
-│   └── versions/
+│   └── multilingual/
 │
-├── models/
-│   ├── v1.0.0/
-│   └── v1.1.0/
+├── deploy/
+│   └── v1.2.0-multilingual/
+│       ├── ARTIFACT_CERTIFICATION.md
+│       ├── requirements-v1.2.txt
+│       ├── smoke_test_v12.py
+│       ├── start_server.py
+│       └── docker/
+│           ├── Dockerfile
+│           ├── Dockerfile.dockerignore
+│           ├── compose.yaml
+│           └── smoke_test_docker.py
 │
-├── techmind/
-│   ├── __init__.py
-│   └── predictor.py
-│
-├── techmind_api/
-│   ├── __init__.py
-│   ├── main.py
-│   └── schemas.py
-│
-├── tests/
-│
-├── Dockerfile
-├── docker-compose.yml
-├── pyproject.toml
-├── requirements.txt
-├── run_api.py
-├── CHANGELOG.md
-├── VERSION
-└── README.md
+└── tests/
 ```
+
+> Algunas rutas de v1.2 deben agregarse al repositorio si todavía no están publicadas.
 
 ---
 
-# 📓 Notebooks
+# 📓 Notebooks históricos
 
-El desarrollo del proyecto se encuentra organizado en las siguientes etapas:
-
-### 01 — EDA y preparación de datos
+## 01 — EDA y preparación
 
 ```text
 01_eda_preparacion_datos.ipynb
@@ -690,23 +726,30 @@ El desarrollo del proyecto se encuentra organizado en las siguientes etapas:
 
 Incluye:
 
-* análisis exploratorio;
-* distribución de categorías;
-* calidad textual;
-* duplicados;
-* conflictos;
-* normalización;
-* ingeniería de características.
+- análisis exploratorio;
+- distribución de categorías;
+- calidad textual;
+- normalización;
+- duplicados;
+- conflictos;
+- ingeniería de características.
 
 ---
 
-### 02 — Variantes textuales y splits
+## 02 — Variantes y splits
 
 ```text
 02_variantes_textuales_splits.ipynb
 ```
 
-Se desarrollaron variantes como:
+Documenta:
+
+- construcción de variantes textuales;
+- comparación de representaciones;
+- preparación del dataset de modelado;
+- train/test split estratificado.
+
+Variantes principales:
 
 ```text
 texto_modelo_base
@@ -715,38 +758,33 @@ texto_combinado
 texto_combinado_ponderado
 ```
 
-y se generaron los conjuntos:
-
-```text
-Train: 3,666
-Test:    917
-```
-
 ---
 
-### 03 — Modelado y selección
+## 03 — Modelado y selección
 
 ```text
 03_modelado_seleccion.ipynb
 ```
 
-Se compararon diferentes algoritmos y configuraciones.
-
-Entre ellos:
-
-* Logistic Regression;
-* LinearSVC;
-* SGDClassifier.
-
-La mejor configuración de v1.0.0 fue:
+Se compararon diferentes algoritmos y representaciones:
 
 ```text
-TF-IDF + SGDClassifier optimizado
+Logistic Regression
+LinearSVC
+SGDClassifier
 ```
+
+Incluye:
+
+- validación cruzada;
+- comparación de variantes textuales;
+- selección del algoritmo;
+- optimización de hiperparámetros;
+- evaluación de generalización.
 
 ---
 
-### 04 — Evaluación, explicabilidad y empaquetado
+## 04 — Evaluación, explicabilidad y empaquetado
 
 ```text
 04_evaluacion_explicabilidad_empaquetado.ipynb
@@ -754,527 +792,574 @@ TF-IDF + SGDClassifier optimizado
 
 Incluye:
 
-* evaluación final;
-* matriz de confusión;
-* análisis de errores;
-* explicabilidad;
-* pruebas de robustez;
-* creación del predictor;
-* empaquetado;
-* API;
-* monitoring;
-* deployment.
+- evaluación final;
+- explicabilidad;
+- serialización;
+- construcción del predictor;
+- pruebas de carga;
+- empaquetado para integración.
 
 ---
 
-### 05 — Modelo v1.1.0
-
-La evolución del modelo se documenta mediante:
+## 05 — Evolución v1.1
 
 ```text
-05_modelo_v1.1.0/
+05_modelo_v1.1.0.ipynb
 ```
 
-incluyendo:
+Documenta:
+
+- diagnóstico de las limitaciones de v1.0;
+- incorporación de TF-IDF Word + Character;
+- char n-grams;
+- normalización Unicode;
+- calibración operacional;
+- evaluación final de v1.1;
+- empaquetado de API y predictor.
+
+Esta versión se conserva como:
 
 ```text
-05_01_diagnostico_v1.0.0.ipynb
-05_02_word_char_experimentos.ipynb
-05_03_calibracion_operacional.ipynb
-05_04_evaluacion_final_v1.1.0.ipynb
-05_05_empaquetado_api_v1.1.0.ipynb
+stable baseline / fallback
 ```
 
 ---
 
-# ⚙️ Instalación
-
-## 1. Clonar el repositorio
-
-```bash
-git clone <[http](https://github.com/MaferVelde/TechMind/)>
-cd techmind-v2
-```
-
-## 2. Crear entorno virtual
-
-```bash
-python -m venv .venv
-```
-
-Windows:
-
-```bash
-.venv\Scripts\activate
-```
-
-Linux/macOS:
-
-```bash
-source .venv/bin/activate
-```
-
-## 3. Instalar dependencias
-
-```bash
-pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-Para desarrollo:
-
-```bash
-pip install -e .
-```
-
----
-
-# 🤖 Uso del predictor
-
-```python
-from techmind import TechMindPredictor
-
-predictor = TechMindPredictor()
-
-resultado = predictor.predict(
-    [
-        "Este contenido explica cómo crear una API REST "
-        "con Spring Boot y Java."
-    ],
-    include_explanation=True,
-    explanation_top_n=8,
-    top_k=4,
-)
-
-print(resultado)
-```
-
----
-
-# 🌐 API REST
-
-TechMind utiliza **FastAPI** para exponer el modelo.
-
-Ejecutar:
-
-```bash
-python run_api.py
-```
-
-o:
-
-```bash
-uvicorn techmind_api.main:app \
-    --host 0.0.0.0 \
-    --port 8000
-```
-
-Documentación Swagger:
+## 06 — Evaluación Multilingüe de v1.1
 
 ```text
-http://localhost:8000/docs
+06_evaluacion_multilingue.ipynb
 ```
 
-ReDoc:
+Este notebook evalúa de forma controlada hasta qué punto el modelo estable `v1.1.0` podía generalizar a contenido técnico en distintos idiomas antes de diseñar la arquitectura multilingual v1.2.
+
+### Benchmark utilizado
 
 ```text
-http://localhost:8000/redoc
+80 documentos
+20 casos semánticos
+4 idiomas
+4 categorías
 ```
+
+Distribución:
+
+```text
+20 documentos por idioma
+20 documentos por categoría
+5 casos por combinación idioma × categoría
+```
+
+Idiomas evaluados:
+
+```text
+Español
+Inglés
+Ruso
+Español + Inglés
+```
+
+Categorías:
+
+```text
+backend
+cloud
+datascience
+frontend
+```
+
+El benchmark se encuentra en:
+
+```text
+data/evaluation/multilingual_benchmark.csv
+```
+
+y corresponde a un conjunto:
+
+```text
+synthetic_controlled
+```
+
+### Validaciones realizadas
+
+El notebook incluye:
+
+- verificación de versión e integridad del artefacto v1.1;
+- validación de las 60,000 características Word + Character;
+- smoke test multilingual;
+- inferencia completa sobre el benchmark;
+- métricas globales y por idioma;
+- métricas por idioma y categoría;
+- análisis de predicciones aceptadas y enviadas a revisión;
+- análisis de cobertura TF-IDF Word vs Character;
+- consistencia semántica entre traducciones;
+- identificación de casos sensibles al idioma;
+- explicabilidad de predicciones;
+- análisis de contribuciones Word vs Character;
+- patrones de confusión;
+- taxonomía de errores;
+- experimentos contrafactuales;
+- exportación de reportes para análisis posterior.
+
+### Resultados principales
+
+```text
+Documentos                  80
+Casos semánticos            20
+Predicciones correctas      69
+Errores                     11
+Accuracy global             86.25%
+Consistencia cross-language 65.00%
+Captura de errores          100.00%
+Accuracy aceptadas          100.00%
+```
+
+### Rendimiento por idioma
+
+| Idioma | Documentos | Accuracy | F1 Macro |
+|---|---:|---:|---:|
+| Inglés | 20 | **0.95** | 0.9495 |
+| Español/Inglés | 20 | **0.95** | 0.9495 |
+| Ruso | 20 | **0.80** | 0.7619 |
+| Español | 20 | **0.75** | 0.7465 |
+
+### Hallazgos por categoría e idioma
+
+La evaluación mostró que el comportamiento no era uniforme entre idiomas.
+
+Algunos ejemplos:
+
+```text
+Backend:
+ES 1.0
+EN 1.0
+RU 1.0
+ES-EN 1.0
+
+Data Science:
+ES    0.6
+EN    1.0
+RU    0.2
+ES-EN 1.0
+```
+
+El mayor problema en ruso se concentró en `datascience`, donde varios casos fueron confundidos con `cloud`.
+
+También se detectaron errores en la frontera:
+
+```text
+cloud ↔ backend
+cloud ↔ frontend
+datascience ↔ cloud
+```
+
+### Cobertura Word vs Character
+
+El análisis confirmó que las características de caracteres adquirían mayor importancia en los idiomas con menor cobertura léxica.
+
+Porcentaje de features diferenciales:
+
+| Idioma | Word | Character |
+|---|---:|---:|
+| Inglés | 75.71% | 24.29% |
+| Español | 28.57% | 71.43% |
+| Español/Inglés | 58.57% | 41.43% |
+| Ruso | 34.29% | 65.71% |
+
+En contribución acumulada, ruso mostró una participación mayor de características Character:
+
+```text
+RU Character ≈ 55.64%
+RU Word      ≈ 44.36%
+```
+
+Esto confirmó que los char n-grams ayudaban a sostener cierta generalización multilingual, pero no resolvían completamente la representación semántica entre idiomas.
+
+### Caso especialmente relevante: ruso
+
+v1.1 obtuvo:
+
+```text
+16 / 20 correctos
+Accuracy = 80%
+```
+
+Sin embargo, el análisis operacional mostró una cobertura/confianza insuficiente para considerarlo soporte multilingual sólido.
+
+Esto evidenció una diferencia importante entre:
+
+```text
+acertar una categoría
+```
+
+y:
+
+```text
+tener suficiente soporte para aceptar operacionalmente la predicción
+```
+
+### Taxonomía de errores
+
+Los errores fueron agrupados en:
+
+```text
+lexical_sensitivity  4
+linguistic_OOD       4
+semantic_boundary    3
+```
+
+Los experimentos contrafactuales mostraron que pequeños cambios de terminología podían modificar de forma significativa la clasificación, especialmente en casos `cloud` y `datascience`.
+
+### Conclusión del Notebook 06
+
+El análisis mostró que `v1.1.0` tenía capacidad multilingual parcial gracias a TF-IDF Word + Character, pero todavía dependía demasiado de coincidencias léxicas y de patrones de caracteres.
+
+La evidencia obtenida puede resumirse como:
+
+```text
+v1.1
+TF-IDF Word + Character
+        │
+        ▼
+Benchmark multilingual
+Accuracy 86.25%
+Cross-language consistency 65%
+        │
+        ▼
+Limitaciones detectadas
+RU / Data Science / Cloud
+        │
+        ▼
+Necesidad de representación
+semántica multilingual
+        │
+        ▼
+v1.2.0-multilingual
+TF-IDF Word + Character
++ MiniLM 384
+```
+
+Por esta razón, el Notebook 06 constituye el puente experimental entre la versión estable `v1.1.0` y el desarrollo de `v1.2.0-multilingual`.
 
 ---
 
-# 🔌 Endpoints
+## v1.2 — Evolución Multilingual
+
+La siguiente etapa del proyecto incorpora una representación semántica multilingual sobre la base léxica ya validada.
+
+Incluye:
+
+```text
+MiniLM Multilingual
+embeddings de 384 dimensiones
+TF-IDF Word + Character
+modelo híbrido
+LinearSVC C=0.3
+calibración OOF
+Semantic Domain Support 5NN
+Decision Margin
+benchmark final independiente
+deployment Docker
+```
+
+La arquitectura v1.2 no sustituye la evidencia de v1.1: surge directamente de las limitaciones observadas durante la evaluación multilingual del Notebook 06.
+
+---
+
+# 🔬 Artefacto v1.2
+
+Ruta:
+
+```text
+models/experimental/v1.2.0-multilingual/
+techmind_hybrid_v1_2_0_multilingual.joblib
+```
+
+SHA-256 certificado de deployment:
+
+```text
+1a495520f642416e7dd391f97417cd3d12dcd82ab11636b7f190e5ed6dafea61
+```
+
+El hash debe verificarse durante el build del contenedor.
+
+---
+
+# 🐳 Deployment
+
+El deployment de v1.2 utiliza:
+
+```text
+Python 3.11
+FastAPI
+Uvicorn
+Scikit-Learn
+Sentence Transformers
+PyTorch CPU
+Docker
+```
+
+Imagen:
+
+```text
+techmind:v1.2.0-multilingual
+```
+
+PyTorch:
+
+```text
+torch==2.13.0+cpu
+```
+
+El runtime está preparado para operar con el modelo MiniLM disponible localmente y sin depender de descargas externas durante inferencia.
+
+---
+
+# ❤️ API del modelo
+
+API v1.2:
 
 ```text
 GET  /
 GET  /health
 GET  /model-info
 POST /predict
+
 GET  /docs
 GET  /redoc
 GET  /openapi.json
 ```
 
----
-
-# 💻 Ejemplo de API
-
-## Request
-
-```json
-{
-  "textos": [
-    "Este contenido explica cómo crear una API REST con Spring Boot y Java, incluyendo el uso de controladores, servicios y repositorios."
-  ],
-  "incluir_explicacion": true,
-  "top_n_explicacion": 8,
-  "top_k": 4
-}
-```
-
-Resultado esperado del caso de regresión:
+Versión:
 
 ```text
-categoria_predicha: backend
-estado: aceptada
-
-word_features_activas: 0
-char_features_activas: 215
-features_activas_total: 215
-
-prediccion_utilizable: true
+API   1.2.0
+Model 1.2.0-multilingual
 ```
 
 ---
 
-# ❤️ Health Check
-
-Antes de enviar tráfico a la API:
+## Healthcheck
 
 ```http
 GET /health
 ```
 
-debe devolver:
+Respuesta esperada:
 
 ```json
 {
   "status": "ok",
-  "ready": true,
-  "api_version": "1.0.0",
-  "model_version": "1.1.0"
+  "model_loaded": true,
+  "api_version": "1.2.0",
+  "model_version": "1.2.0-multilingual"
 }
 ```
 
-La aplicación debe enviar tráfico a `/predict` únicamente cuando:
+---
+
+## Model Info
+
+```http
+GET /model-info
+```
+
+Debe permitir verificar:
 
 ```text
-ready = true
+model_version
+status
+classifier
+classifier_C
+embedding_model
+embedding_dimension
+artifact_sha256
+scores_are_probabilities
 ```
 
 ---
 
-# 🐳 Docker
+## Predict
 
-Construir:
-
-```bash
-docker build \
-    -t techmind-api:1.1.0 \
-    .
+```http
+POST /predict
 ```
 
-Ejecutar:
+La respuesta operacional incluye conceptos como:
 
-```bash
-docker run \
-    --rm \
-    -p 8000:8000 \
-    techmind-api:1.1.0
-```
-
-También puede utilizarse:
-
-```bash
-docker compose up --build
+```text
+prediction
+second_category
+decision
+decision_margin
+domain_similarity_5nn
+score_top1
+score_top2
+reason
 ```
 
 ---
 
-# ☁️ Deployment
+# 🔍 Explicabilidad
 
-El proyecto incluye configuración para despliegue y health checks.
+La explicación v1.2 se concentra en las contribuciones diferenciales de las características TF-IDF.
 
-La estructura incluye:
+Puede solicitarse mediante:
 
-```text
-deployment/
-├── deployment_config.json
-├── healthcheck.py
-└── oci/
+```json
+{
+  "include_explanation": true,
+  "explanation_top_n": 8
+}
 ```
 
-TechMind fue preparado para ejecutarse sobre infraestructura de **Oracle Cloud Infrastructure (OCI)**.
+La explicación no representa una explicación completa del componente semántico MiniLM.
 
 ---
 
-# 📡 Monitoreo
+# ✅ Smoke Test Docker
 
-El proyecto incluye una capa de monitoring para detectar cambios en producción.
-
-Se supervisan aspectos como:
-
-* distribución de categorías;
-* tasa de predicciones aceptadas;
-* tasa de revisión;
-* tasa de rechazo;
-* cobertura;
-* margen de decisión;
-* drift;
-* comportamiento por lotes.
-
-La configuración se encuentra en:
+El smoke test de deployment verifica:
 
 ```text
-monitoring/config/
+/health
+/model-info
+SHA-256
+/predict
+English
+Español
+Русский
+OOD
 ```
 
-y los resultados se generan en:
+Resultado esperado:
 
 ```text
-reports/monitoring/
+DOCKER SMOKE TEST PASSED
 ```
 
 ---
 
-# ✅ Tests
+# 🔄 Versionado y rollback
 
-Ejecutar:
+| Versión | Rol | Estado |
+|---|---|---|
+| `v1.0.0` | Primera versión productiva | Histórico |
+| `v1.1.0` | Word + Char / fallback | **Stable baseline** |
+| `v1.2.0-multilingual` | Evolución multilingual | **Validated experimental candidate** |
 
-```bash
-pytest -q
-```
-
-El proyecto incluye pruebas para:
-
-```text
-predictor
-API
-smoke test
-monitoring
-regresión
-compatibilidad
-```
-
-Entre las pruebas de regresión se encuentra específicamente el caso:
+Principio:
 
 ```text
-Spring Boot + Java + API REST
+v1.0 → v1.1 → v1.2 multilingual
 ```
 
-que motivó el desarrollo de v1.1.0.
+El historial se conserva para mantener:
+
+- trazabilidad;
+- reproducibilidad;
+- comparación de métricas;
+- rollback;
+- documentación de decisiones técnicas.
 
 ---
 
-# 🔐 Integridad del modelo
+# 📚 Documentación v1.2
 
-El artefacto final v1.1.0 posee SHA-256:
-
-```text
-756b2577e731336ead95852ee1d8d752408762478a23d0bbf42cc9537e136ff6
-```
-
-El hash permite verificar que el modelo utilizado en producción corresponde exactamente al artefacto evaluado.
-
----
-
-# 📦 Versionado
-
-TechMind conserva las diferentes versiones productivas.
+Documentación específica:
 
 ```text
-artifacts/
-├── v1.0.0/
-└── v1.1.0/
-```
-
-También:
-
-```text
-releases/
-├── v1.0.0/
-└── v1.1.0/
-```
-
-La raíz del repositorio representa siempre la versión estable actual.
-
-Actualmente:
-
-```text
-Package:       1.1.0
-Model:         1.1.0
-API interface: 1.0.0
+docs/versions/v1.2.0-multilingual/
+├── README.md
+├── architecture.md
+├── model_card.md
+├── evaluation.md
+├── multilingual_validation.md
+├── operational_controls.md
+└── deployment.md
 ```
 
 ---
 
-# 📝 Changelog
+# 🧭 Roadmap
 
-## v1.1.0
+Prioridades futuras:
 
-### Added
-
-* TF-IDF Word + Char;
-* char n-grams 3–6;
-* stopwords controladas;
-* normalización Unicode;
-* 60,000 features;
-* calibración OOF;
-* nuevas métricas de cobertura;
-* `word_features_activas`;
-* `char_features_activas`;
-* `features_activas_total`;
-* `feature_type` en explicaciones;
-* pruebas de regresión;
-* actualización del predictor;
-* actualización de FastAPI;
-* compatibilidad con API 1.0.0.
-
-### Fixed
-
-* clasificación incorrecta de textos técnicos cortos relacionados con Spring Boot y APIs REST;
-* dependencia excesiva de stopwords;
-* interpretación incorrecta de cobertura cuando Word TF-IDF no encontraba términos.
+- mejorar la frontera `cloud ↔ backend`;
+- ampliar corpus multilingual;
+- crear un nuevo holdout independiente;
+- profundizar explicabilidad del modelo híbrido;
+- fortalecer observabilidad;
+- automatizar CI/CD;
+- evaluar una futura `v1.3`.
 
 ---
 
-## v1.0.0
+# ✅ Estado actual del proyecto
 
-Primera versión productiva de TechMind.
-
-Incluyó:
-
-* TF-IDF;
-* SGDClassifier;
-* predictor productivo;
-* FastAPI;
-* explicabilidad;
-* robustez;
-* monitoring;
-* Docker;
-* deployment.
+| Componente | Estado |
+|---|---|
+| Dataset procesado | ✅ |
+| Pipeline de preparación | ✅ |
+| Modelo v1.0 | ✅ |
+| Modelo v1.1 | ✅ |
+| Modelo v1.2 multilingual | ✅ |
+| Español | ✅ |
+| Inglés | ✅ |
+| Ruso | ✅ |
+| Español/Inglés | ✅ |
+| TF-IDF Word + Character | ✅ |
+| MiniLM Multilingual | ✅ |
+| LinearSVC | ✅ |
+| Semantic Domain Support | ✅ |
+| Decision Margin | ✅ |
+| FastAPI | ✅ |
+| OpenAPI | ✅ |
+| Artefacto Joblib | ✅ |
+| SHA-256 deployment | ✅ |
+| Docker | ✅ |
+| PyTorch CPU | ✅ |
+| Healthcheck | ✅ |
+| Model Info | ✅ |
+| Predict | ✅ |
+| Smoke Test Docker | ✅ |
+| Benchmark multilingual independiente | ✅ |
+| Documentación v1.2 | ✅ |
 
 ---
 
-# 🛠️ Tecnologías
+# 👥 Proyecto
 
-El proyecto utiliza principalmente:
+Proyecto desarrollado como parte del **Hackathon G9 — Team 22**, integrando Ciencia de Datos, Backend, infraestructura y frontend.
+
+---
+
+# 📌 Resumen
 
 ```text
-Python
-Pandas
-NumPy
-Scikit-learn
-SciPy
-Joblib
-FastAPI
-Pydantic
-Uvicorn
-Pytest
-Docker
-GitHub Actions
-Oracle Cloud Infrastructure
+Proyecto:
+IndexMind
+
+Historia:
+v1.0.0 → v1.1.0 → v1.2.0-multilingual
+
+Stable fallback:
+v1.1.0
+
+Modelo más reciente:
+v1.2.0-multilingual
+
+Estado v1.2:
+validated_experimental_candidate
+
+Arquitectura:
+TF-IDF Word + Character
++ MiniLM Multilingual 384
++ LinearSVC C=0.3
+
+Idiomas evaluados:
+ES / EN / RU / ES-EN
+
+SHA-256 deployment:
+1a495520f642416e7dd391f97417cd3d12dcd82ab11636b7f190e5ed6dafea61
 ```
-
----
-
-# 📚 Documentación
-
-La documentación adicional se encuentra en:
-
-```text
-docs/
-```
-
-Incluyendo:
-
-```text
-architecture.md
-data_dictionary.md
-model_card.md
-api_reference.md
-monitoring.md
-```
-
-además de documentación específica por versión.
-
----
-
-# ⚠️ Limitaciones
-
-TechMind debe utilizarse considerando las siguientes limitaciones:
-
-* el modelo está especializado en las cuatro categorías disponibles;
-* no debe interpretarse el margen de decisión como probabilidad;
-* contenido extremadamente breve puede requerir revisión;
-* contenido multidisciplinario puede presentar ambigüedad;
-* nuevas tecnologías pueden producir drift con el tiempo;
-* las explicaciones representan asociaciones matemáticas y no causalidad.
-
-Por esta razón el sistema combina clasificación automática, control operacional y monitoreo.
-
----
-
-# 🔮 Próximos pasos
-
-Entre las posibles mejoras futuras se encuentran:
-
-* ampliar el número de categorías;
-* incorporar más contenido técnico;
-* evaluar modelos basados en embeddings;
-* comparar con modelos Transformer;
-* implementar detección automática de nuevos temas;
-* mejorar monitoreo de drift semántico;
-* automatizar reentrenamiento;
-* incorporar feedback humano;
-* mejorar observabilidad en producción.
-
----
-
-# 🤝 Contribuciones
-
-Las contribuciones al proyecto deben realizarse mediante branches y Pull Requests.
-
-Antes de enviar cambios:
-
-```bash
-pytest -q
-```
-
-y verificar que no se modifique un artefacto de modelo aprobado sin incrementar la versión correspondiente.
-
-Consulta:
-
-```text
-CONTRIBUTING.md
-```
-
----
-
-# 📄 Licencia
-
-Consulta el archivo:
-
-```text
-LICENSE
-```
-
-para conocer los términos de uso del proyecto.
-
----
-
-# 🧠 TechMind
-
-```text
-Datos
-  ↓
-Preparación
-  ↓
-NLP
-  ↓
-Machine Learning
-  ↓
-Evaluación
-  ↓
-Explicabilidad
-  ↓
-Control operacional
-  ↓
-API
-  ↓
-Monitoring
-  ↓
-Deployment
-```
-
-**TechMind v1.1.0 — clasificación inteligente de contenido técnico con Machine Learning y NLP.**
