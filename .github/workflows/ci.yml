@@ -38,7 +38,7 @@ jobs:
   #    Fast checks for the existing Python packages and v1.1 fallback.
   # ===========================================================================
   quality-and-v11:
-    name: Quality + v1.1 compatibility
+    name: Quality + stable v1.1
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -119,44 +119,24 @@ jobs:
             echo "Historical *_test.py smoke scripts are intentionally not auto-collected."
           fi
 
-      - name: Check legacy v1.1 smoke-test bundle
-        id: v11-legacy-bundle
+      - name: Stage versioned v1.1 artifact bundle
         run: |
           REQUIRED_FILES=(
-            "artifacts/techmind_modelo_final.joblib"
-            "artifacts/techmind_modelo_final_metadata.json"
-            "artifacts/configuracion_inferencia.json"
-            "artifacts/contrato_inferencia.json"
+            "techmind_modelo_final.joblib"
+            "techmind_modelo_final_metadata.json"
+            "configuracion_inferencia.json"
+            "contrato_inferencia.json"
           )
 
-          missing=0
-
           for file in "${REQUIRED_FILES[@]}"; do
-            if [[ ! -f "$file" ]]; then
-              echo "Missing legacy v1.1 smoke dependency: $file"
-              missing=1
-            fi
+            test -f "artifacts/v1.1.0/${file}"
+            cp "artifacts/v1.1.0/${file}" "artifacts/${file}"
           done
 
-          if [[ "$missing" -eq 0 ]]; then
-            echo "available=true" >> "$GITHUB_OUTPUT"
-            echo "Legacy v1.1 smoke-test bundle is available."
-          else
-            echo "available=false" >> "$GITHUB_OUTPUT"
-            echo "Legacy v1.1 smoke-test bundle is not versioned in this checkout."
-            echo "The v1.1 smoke test will be skipped rather than fabricating historical artifacts."
-          fi
+          echo "V11_ARTIFACT_BUNDLE_STAGED"
 
       - name: Run standalone v1.1 smoke test
-        if: steps.v11-legacy-bundle.outputs.available == 'true'
         run: python tests/smoke_test_v1_1.py
-
-      - name: Report skipped legacy v1.1 smoke test
-        if: steps.v11-legacy-bundle.outputs.available != 'true'
-        run: |
-          echo "SKIPPED: tests/smoke_test_v1_1.py"
-          echo "Reason: required legacy artifact bundle is absent from the repository checkout."
-          echo "v1.2 artifact integrity and multilingual/API regression tests remain authoritative for v1.2."
 
   # ===========================================================================
   # 2. v1.2 artifact certification
