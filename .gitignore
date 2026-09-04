@@ -1,0 +1,233 @@
+# =============================================================================
+# IndexMind / TechMind — .gitignore
+# Root-level ignore rules for Python, Jupyter, ML/NLP, FastAPI and Docker.
+#
+# Important:
+# - Do NOT ignore *.joblib globally: certified model artifacts are versioned.
+# - Do NOT ignore data/*.csv globally: evaluation datasets are part of the repo.
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# Python bytecode / caches
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+*.so
+.python-version
+
+
+# -----------------------------------------------------------------------------
+# Virtual environments
+# -----------------------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+
+# -----------------------------------------------------------------------------
+# Packaging / build artifacts
+# -----------------------------------------------------------------------------
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+
+# -----------------------------------------------------------------------------
+# Test / coverage / lint caches
+# -----------------------------------------------------------------------------
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.tox/
+.nox/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+
+# -----------------------------------------------------------------------------
+# Jupyter
+# -----------------------------------------------------------------------------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+
+# -----------------------------------------------------------------------------
+# IDE / editors
+# -----------------------------------------------------------------------------
+.vscode/
+.idea/
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.vs/
+
+
+# -----------------------------------------------------------------------------
+# OS files
+# -----------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+
+# -----------------------------------------------------------------------------
+# Environment variables / local configuration / secrets
+# -----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+!.env.template
+
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# OCI / cloud credentials and local CLI state
+.oci/
+oci_api_key*
+config.local
+secrets/
+secret/
+credentials/
+credentials.json
+
+
+# -----------------------------------------------------------------------------
+# Logs / runtime files
+# -----------------------------------------------------------------------------
+*.log
+logs/
+log/
+*.pid
+*.pid.lock
+*.seed
+*.out
+*.err
+
+
+# -----------------------------------------------------------------------------
+# Temporary files
+# -----------------------------------------------------------------------------
+tmp/
+temp/
+.tmp/
+.cache/
+.cache-*/
+*.tmp
+*.temp
+*.bak
+*.old
+
+
+# -----------------------------------------------------------------------------
+# Hugging Face / Transformers / Sentence-Transformers caches
+# -----------------------------------------------------------------------------
+huggingface/
+.huggingface/
+hf_cache/
+.hf_home/
+transformers_cache/
+sentence_transformers_cache/
+torch_cache/
+
+# Common local cache locations if created inside the repository
+.cache/huggingface/
+.cache/torch/
+.cache/transformers/
+.cache/sentence_transformers/
+
+
+# -----------------------------------------------------------------------------
+# Machine Learning local experiment artifacts
+# Keep certified/versioned model artifacts in models/ tracked by Git.
+# -----------------------------------------------------------------------------
+mlruns/
+wandb/
+runs/
+checkpoints/
+checkpoint/
+lightning_logs/
+
+# Local-only scratch model exports
+models/local/
+models/tmp/
+models/cache/
+artifacts/local/
+artifacts/tmp/
+
+
+# -----------------------------------------------------------------------------
+# FastAPI / Uvicorn local runtime
+# -----------------------------------------------------------------------------
+uvicorn.pid
+gunicorn.pid
+
+
+# -----------------------------------------------------------------------------
+# Docker / Compose local overrides
+# -----------------------------------------------------------------------------
+docker-compose.override.yml
+compose.override.yaml
+compose.override.yml
+*.docker.env
+
+
+# -----------------------------------------------------------------------------
+# Node / frontend caches (if any supporting tooling is used)
+# -----------------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# -----------------------------------------------------------------------------
+# Miscellaneous local files
+# -----------------------------------------------------------------------------
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+.history/
+.spyproject/
+.ropeproject/
