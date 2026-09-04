@@ -1,0 +1,1 @@
+1a495520f642416e7dd391f97417cd3d12dcd82ab11636b7f190e5ed6dafea61  techmind_hybrid_v1_2_0_multilingual.joblib
