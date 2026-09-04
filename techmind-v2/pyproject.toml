@@ -8,7 +8,7 @@ version = "1.1.0"
 description = "Clasificador NLP de contenido técnico para backend, cloud, datascience y frontend."
 readme = "README.md"
 requires-python = ">=3.11"
-license = { file = "LICENSE" }
+license = "MIT"
 
 keywords = [
     "machine-learning",
@@ -43,10 +43,12 @@ include-package-data = true
 [tool.setuptools.packages.find]
 where = ["."]
 include = [
-    "techmind*",
-    "techmind_api*"
+    "techmind",
+    "techmind_api"
 ]
 exclude = [
+    "techmind_v12*",
+    "techmind_api_v12*",
     "tests*",
     "notebooks*",
     "data*",
@@ -54,6 +56,7 @@ exclude = [
     "reports*",
     "monitoring*",
     "deployment*",
+    "deploy*",
     "examples*"
 ]
 
@@ -61,8 +64,7 @@ exclude = [
 testpaths = ["tests"]
 addopts = "-ra"
 python_files = [
-    "test_*.py",
-    "*_test.py"
+    "test_*.py"
 ]
 
 [tool.ruff]
