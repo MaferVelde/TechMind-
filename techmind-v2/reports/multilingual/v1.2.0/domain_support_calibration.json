@@ -1,0 +1,51 @@
+{
+  "model_version": "1.2.0-multilingual",
+  "component": "semantic_domain_support",
+  "preferred_terminology": [
+    "domain_support_detector",
+    "semantic_coverage_detector"
+  ],
+  "algorithm": {
+    "class": "NearestNeighbors",
+    "n_neighbors": 5,
+    "metric": "cosine",
+    "algorithm": "brute",
+    "n_jobs": 1
+  },
+  "metric": "mean_cosine_similarity_5nn",
+  "threshold": 0.4266,
+  "frozen": true,
+  "reference_embeddings": {
+    "shape": [
+      3666,
+      384
+    ],
+    "dtype": "float32",
+    "normalized_l2": true
+  },
+  "test_in_domain_distribution": {
+    "mean": 0.607253,
+    "median": 0.562382,
+    "p5": 0.438116,
+    "p1": 0.395021,
+    "min": 0.348859
+  },
+  "ood_challenge": {
+    "n_examples": 120,
+    "mean": 0.299419,
+    "median": 0.292141,
+    "p95": 0.403019,
+    "p99": 0.421374,
+    "max": 0.426301
+  },
+  "train_leave_one_out_distribution": {
+    "mean": 0.6077,
+    "median": 0.5635,
+    "p5": 0.4388,
+    "min": 0.3288
+  },
+  "decision_rule": {
+    "rejected_ood_if": "domain_similarity_5nn < 0.4266"
+  },
+  "interpretation_note": "Low similarity may indicate true OOD content or valid technical content that is underrepresented in the reference corpus."
+}

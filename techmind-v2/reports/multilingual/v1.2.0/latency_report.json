@@ -1,0 +1,26 @@
+{
+  "model_version": "1.2.0-multilingual",
+  "environment": {
+    "execution": "CPU",
+    "n_jobs": 1
+  },
+  "predictor_load": {
+    "seconds": 3.319
+  },
+  "batch_100": {
+    "total_seconds": 3.342,
+    "milliseconds_per_document": 33.42,
+    "throughput_documents_per_second": 29.92
+  },
+  "individual_50": {
+    "mean_ms": 62.76,
+    "median_ms": 46.61,
+    "p90_ms": 98.86,
+    "p95_ms": 152.38,
+    "max_ms": 291.3
+  },
+  "notes": [
+    "Latency includes semantic embedding, domain support calculation and classification.",
+    "These measurements should be treated as environment-specific reference values, not universal production SLAs."
+  ]
+}

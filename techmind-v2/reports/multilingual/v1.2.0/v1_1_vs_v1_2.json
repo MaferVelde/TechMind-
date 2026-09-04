@@ -1,0 +1,53 @@
+{
+  "benchmark": "multilingual_final_benchmark_v1",
+  "n_documents": 320,
+  "models": {
+    "v1.1.0": {
+      "role": "stable_baseline_fallback",
+      "accuracy": 0.5656,
+      "f1_macro": 0.5705
+    },
+    "v1.2.0-multilingual": {
+      "role": "validated_experimental_candidate",
+      "accuracy": 0.7625,
+      "f1_macro": 0.757
+    }
+  },
+  "delta_v1_2_minus_v1_1": {
+    "accuracy": 0.1969,
+    "accuracy_percentage_points": 19.69,
+    "f1_macro": 0.1864
+  },
+  "paired_comparison": {
+    "both_correct": 167,
+    "only_v1_1_correct": 14,
+    "only_v1_2_correct": 77,
+    "both_incorrect": 62,
+    "discordant_cases": 91,
+    "v1_2_wins": 77,
+    "v1_1_wins": 14,
+    "p_value": "<0.001"
+  },
+  "by_category_accuracy": {
+    "backend": {
+      "v1_1": 0.7375,
+      "v1_2": 0.9
+    },
+    "cloud": {
+      "v1_1": 0.4375,
+      "v1_2": 0.4
+    },
+    "datascience": {
+      "v1_1": 0.4375,
+      "v1_2": 0.8375
+    },
+    "frontend": {
+      "v1_1": 0.65,
+      "v1_2": 0.9125
+    }
+  },
+  "summary": {
+    "largest_gain": "multilingual semantic representation, especially Russian and Data Science",
+    "main_regression_or_remaining_issue": "cloud"
+  }
+}

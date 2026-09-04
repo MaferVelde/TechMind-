@@ -1,0 +1,101 @@
+{
+  "model_version": "1.2.0-multilingual",
+  "status": "validated_experimental_candidate",
+  "benchmark": {
+    "name": "multilingual_final_benchmark_v1",
+    "origin": "synthetic_controlled_independent",
+    "split_role": "final_independent_evaluation",
+    "n_documents": 320,
+    "semantic_cases": 80,
+    "languages": [
+      "en",
+      "es",
+      "es_en",
+      "ru"
+    ],
+    "categories": [
+      "backend",
+      "cloud",
+      "datascience",
+      "frontend"
+    ],
+    "documents_per_language": 80,
+    "documents_per_category": 80
+  },
+  "global_metrics": {
+    "correct": 244,
+    "total": 320,
+    "accuracy": 0.7625,
+    "precision_macro": 0.8167,
+    "recall_macro": 0.7625,
+    "f1_macro": 0.757,
+    "f1_weighted": 0.757
+  },
+  "by_language": {
+    "en": {
+      "correct": 62,
+      "total": 80,
+      "accuracy": 0.775,
+      "f1_macro": 0.7718
+    },
+    "es": {
+      "correct": 60,
+      "total": 80,
+      "accuracy": 0.75,
+      "f1_macro": 0.7398
+    },
+    "es_en": {
+      "correct": 63,
+      "total": 80,
+      "accuracy": 0.7875,
+      "f1_macro": 0.7892
+    },
+    "ru": {
+      "correct": 59,
+      "total": 80,
+      "accuracy": 0.7375,
+      "f1_macro": 0.7235
+    }
+  },
+  "by_category": {
+    "backend": {
+      "correct": 72,
+      "total": 80,
+      "accuracy": 0.9
+    },
+    "cloud": {
+      "correct": 32,
+      "total": 80,
+      "accuracy": 0.4
+    },
+    "datascience": {
+      "correct": 67,
+      "total": 80,
+      "accuracy": 0.8375
+    },
+    "frontend": {
+      "correct": 73,
+      "total": 80,
+      "accuracy": 0.9125
+    }
+  },
+  "cross_language_consistency": {
+    "consistent_semantic_cases": 64,
+    "total_semantic_cases": 80,
+    "consistency": 0.8
+  },
+  "operational_result": {
+    "accepted": 120,
+    "review": 160,
+    "rejected_ood": 40,
+    "rejected_invalid": 0,
+    "coverage": 0.375,
+    "accepted_accuracy": 0.9167,
+    "error_capture": 0.8684,
+    "accepted_errors": 10
+  },
+  "notes": [
+    "The benchmark was evaluated after freezing architecture, classifier C and operational thresholds.",
+    "It was not used for subsequent retuning of v1.2."
+  ]
+}

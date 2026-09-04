@@ -1,0 +1,46 @@
+{
+  "model_version": "1.2.0-multilingual",
+  "calibration_source": "5-fold OOF predictions on TRAIN",
+  "confidence_control": {
+    "metric": "top1_minus_top2_decision_margin",
+    "threshold": 0.8132,
+    "frozen": true
+  },
+  "oof_train": {
+    "accuracy": 0.8565,
+    "f1_macro": 0.8573,
+    "margin_distribution": {
+      "correct_mean": 1.427452,
+      "correct_median": 1.375643,
+      "incorrect_mean": 0.401866,
+      "incorrect_median": 0.296762
+    }
+  },
+  "combined_operational_rule": {
+    "1": "reject invalid input",
+    "2": "require semantic domain similarity >= 0.4266",
+    "3": "require decision margin >= 0.8132 for accepted",
+    "otherwise": "review"
+  },
+  "test_original": {
+    "n_documents": 917,
+    "accepted": 618,
+    "review": 269,
+    "rejected_ood": 30,
+    "coverage": 0.6739,
+    "accepted_accuracy": 0.966,
+    "error_capture": 0.8174,
+    "accepted_errors": 21
+  },
+  "final_multilingual_benchmark": {
+    "n_documents": 320,
+    "accepted": 120,
+    "review": 160,
+    "rejected_ood": 40,
+    "coverage": 0.375,
+    "accepted_accuracy": 0.9167,
+    "error_capture": 0.8684,
+    "accepted_errors": 10
+  },
+  "backend_rule": "Backend must honor decision and must not recalculate thresholds."
+}
