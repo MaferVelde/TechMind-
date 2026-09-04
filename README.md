@@ -4,11 +4,14 @@
 
 **Java 17 · Spring Boot · Python 3.11 · FastAPI · Scikit-Learn · Sentence Transformers · Docker**
 
-[![Model](https://img.shields.io/badge/model-v1.2.0--multilingual-6f42c1)](#-versión-actual)
-[![Status](https://img.shields.io/badge/status-validated__experimental__candidate-f0ad4e)](#-versión-actual)
-[![Stable](https://img.shields.io/badge/stable%20fallback-v1.1.0-2ea44f)](#-historial-y-evolución-del-modelo)
-[![Docker](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white)](#-deployment)
-[![FastAPI](https://img.shields.io/badge/FastAPI-1.2.0-009688?logo=fastapi&logoColor=white)](#-api-del-modelo)
+[![IndexMind CI](https://github.com/MaferVelde/TechMind-/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/MaferVelde/TechMind-/actions/workflows/ci.yml)
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Stable](https://img.shields.io/badge/stable-v1.1.0-brightgreen)
+![v1.2 Status](https://img.shields.io/badge/v1.2-validated_experimental_candidate-orange)
+![Docker](https://img.shields.io/badge/Docker-validated-blue)
+![API](https://img.shields.io/badge/API-FastAPI-009688)
+![Languages](https://img.shields.io/badge/languages-ES%20%7C%20EN%20%7C%20RU-purple)
 
 ---
 
@@ -698,7 +701,10 @@ techmind-v2/
 │   └── multilingual/
 │
 ├── deploy/
-│   └── 07_v1.2.0_multilingual/
+|   ├── archive/
+|   |   └── v1.0.0/
+|   |    
+│   └── v1.2.0-multilingual/
 │       ├── ARTIFACT_CERTIFICATION.md
 │       ├── requirements-v1.2.txt
 │       ├── smoke_test_v12.py
@@ -711,8 +717,6 @@ techmind-v2/
 │
 └── tests/
 ```
-
-> Algunas rutas de v1.2 deben agregarse al repositorio si todavía no están publicadas.
 
 ---
 
