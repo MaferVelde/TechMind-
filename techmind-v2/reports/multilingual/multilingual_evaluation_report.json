@@ -1,0 +1,83 @@
+{
+  "experiment": {
+    "name": "TechMind Multilingual Pilot Benchmark",
+    "model_version": "1.1.0",
+    "api_interface": "1.0.0",
+    "benchmark_type": "synthetic_controlled",
+    "documents": 80,
+    "semantic_cases": 20,
+    "languages": [
+      "es",
+      "en",
+      "ru",
+      "es_en"
+    ],
+    "categories": [
+      "backend",
+      "cloud",
+      "datascience",
+      "frontend"
+    ]
+  },
+  "global_metrics": {
+    "accuracy": 0.8625,
+    "correct_predictions": 69,
+    "errors": 11,
+    "cross_language_consistency": 0.65,
+    "error_capture_rate": 1.0,
+    "accepted_accuracy": 1.0
+  },
+  "metrics_by_language": [
+    {
+      "idioma": "en",
+      "documentos": 20,
+      "accuracy": 0.95,
+      "precision_macro": 0.958333,
+      "recall_macro": 0.95,
+      "f1_macro": 0.949495
+    },
+    {
+      "idioma": "es_en",
+      "documentos": 20,
+      "accuracy": 0.95,
+      "precision_macro": 0.958333,
+      "recall_macro": 0.95,
+      "f1_macro": 0.949495
+    },
+    {
+      "idioma": "ru",
+      "documentos": 20,
+      "accuracy": 0.8,
+      "precision_macro": 0.888889,
+      "recall_macro": 0.8,
+      "f1_macro": 0.761905
+    },
+    {
+      "idioma": "es",
+      "documentos": 20,
+      "accuracy": 0.75,
+      "precision_macro": 0.79375,
+      "recall_macro": 0.75,
+      "f1_macro": 0.746474
+    }
+  ],
+  "failure_taxonomy": {
+    "lexical_sensitivity": 4,
+    "linguistic_OOD": 4,
+    "semantic_boundary": 3
+  },
+  "findings": [
+    "English and Spanish-English mixed content achieved 95% accuracy.",
+    "Russian achieved 80% accuracy but no predictions were operationally accepted.",
+    "All benchmark errors were routed to review or rejection.",
+    "Cross-language prediction consistency was 65%.",
+    "Russian datascience content showed a systematic datascience-to-cloud confusion.",
+    "Counterfactual tests confirmed lexical sensitivity in selected Spanish examples."
+  ],
+  "limitations": [
+    "Pilot benchmark contains only 20 semantic cases.",
+    "Examples are synthetic and controlled.",
+    "Results do not establish official multilingual support.",
+    "Counterfactual examples are diagnostic and are not included in benchmark metrics."
+  ]
+}

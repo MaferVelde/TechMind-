@@ -1,0 +1,281 @@
+﻿case_id,idioma,categoria_real,categoria_predicha,segunda_categoria,correcta,posicion,term,feature_type,contribution,favours,contribution_abs
+cloud_001,en,cloud,cloud,backend,True,1,capacity,word,0.16370508082918264,cloud,0.16370508082918264
+cloud_001,en,cloud,cloud,backend,True,2,using,word,0.15998672752072093,cloud,0.15998672752072093
+cloud_001,en,cloud,cloud,backend,True,3,increase,word,0.15581756385766582,cloud,0.15581756385766582
+cloud_001,en,cloud,cloud,backend,True,4,an,word,0.11041751053499087,cloud,0.11041751053499087
+cloud_001,en,cloud,cloud,backend,True,5, aws,char,0.08874075884657515,cloud,0.08874075884657515
+cloud_001,en,cloud,cloud,backend,True,6, aws ,char,0.08800503610025716,cloud,0.08800503610025716
+cloud_001,en,cloud,cloud,backend,True,7,aws,char,0.08553469693418499,cloud,0.08553469693418499
+cloud_001,en,cloud,cloud,backend,True,8,aws ,char,0.08476661127590607,cloud,0.08476661127590607
+cloud_001,en,cloud,cloud,backend,True,9, aw,char,0.08137023124381054,cloud,0.08137023124381054
+cloud_001,en,cloud,cloud,backend,True,10,scaling,word,-0.07838303303282122,backend,0.07838303303282122
+cloud_001,es,cloud,backend,cloud,False,1,aplicacion,word,0.1154797760339587,backend,0.1154797760339587
+cloud_001,es,cloud,backend,cloud,False,2,scaling,word,0.09923754655338993,backend,0.09923754655338993
+cloud_001,es,cloud,backend,cloud,False,3, aws,char,-0.08417819431817128,cloud,0.08417819431817128
+cloud_001,es,cloud,backend,cloud,False,4, aws ,char,-0.08348029841206427,cloud,0.08348029841206427
+cloud_001,es,cloud,backend,cloud,False,5,aws,char,-0.08113697057650972,cloud,0.08113697057650972
+cloud_001,es,cloud,backend,cloud,False,6,aws ,char,-0.08040837568239362,cloud,0.08040837568239362
+cloud_001,es,cloud,backend,cloud,False,7, aw,char,-0.07718661893796018,cloud,0.07718661893796018
+cloud_001,es,cloud,backend,cloud,False,8,usando,word,0.05793123600879331,backend,0.05793123600879331
+cloud_001,es,cloud,backend,cloud,False,9,ws ,char,-0.053881851992530795,cloud,0.053881851992530795
+cloud_001,es,cloud,backend,cloud,False,10, ba,char,0.05078199036372043,backend,0.05078199036372043
+cloud_001,es_en,cloud,cloud,backend,True,1,using,word,0.2157652165161093,cloud,0.2157652165161093
+cloud_001,es_en,cloud,cloud,backend,True,2,aplicacion,word,-0.12301256011013044,backend,0.12301256011013044
+cloud_001,es_en,cloud,cloud,backend,True,3,scaling,word,-0.1057108446156922,backend,0.1057108446156922
+cloud_001,es_en,cloud,cloud,backend,True,4, aws,char,0.0987039995931389,cloud,0.0987039995931389
+cloud_001,es_en,cloud,cloud,backend,True,5, aws ,char,0.09788567463629708,cloud,0.09788567463629708
+cloud_001,es_en,cloud,cloud,backend,True,6,aws,char,0.09513798170227036,cloud,0.09513798170227036
+cloud_001,es_en,cloud,cloud,backend,True,7,aws ,char,0.09428366033419043,cloud,0.09428366033419043
+cloud_001,es_en,cloud,cloud,backend,True,8, aw,char,0.09050595663114124,cloud,0.09050595663114124
+cloud_001,es_en,cloud,cloud,backend,True,9,an,word,0.08795098706878832,cloud,0.08795098706878832
+cloud_001,es_en,cloud,cloud,backend,True,10,ws ,char,0.06317971465444316,cloud,0.06317971465444316
+cloud_001,ru,cloud,cloud,backend,True,1,для,word,0.14699878419915097,cloud,0.14699878419915097
+cloud_001,ru,cloud,cloud,backend,True,2, aws,char,0.13098638133422813,cloud,0.13098638133422813
+cloud_001,ru,cloud,cloud,backend,True,3, aws ,char,0.12990041293077906,cloud,0.12990041293077906
+cloud_001,ru,cloud,cloud,backend,True,4,aws,char,0.12625405254083183,cloud,0.12625405254083183
+cloud_001,ru,cloud,cloud,backend,True,5,aws ,char,0.12512031464811654,cloud,0.12512031464811654
+cloud_001,ru,cloud,cloud,backend,True,6, aw,char,0.1201070655411399,cloud,0.1201070655411399
+cloud_001,ru,cloud,cloud,backend,True,7,scaling,word,-0.09184332658211167,backend,0.09184332658211167
+cloud_001,ru,cloud,cloud,backend,True,8,ws ,char,0.08384343319852533,cloud,0.08384343319852533
+cloud_001,ru,cloud,cloud,backend,True,9, пр,char,0.07943390752347877,cloud,0.07943390752347877
+cloud_001,ru,cloud,cloud,backend,True,10, ba,char,-0.07901986029245926,backend,0.07901986029245926
+cloud_005,en,cloud,frontend,cloud,False,1,rolling,word,0.15660302364260728,frontend,0.15660302364260728
+cloud_005,en,cloud,frontend,cloud,False,2,pipeline that,word,-0.10564599051504944,cloud,0.10564599051504944
+cloud_005,en,cloud,frontend,cloud,False,3,images,word,0.09881635284647533,frontend,0.09881635284647533
+cloud_005,en,cloud,frontend,cloud,False,4,rollback,word,-0.08162383895468958,cloud,0.08162383895468958
+cloud_005,en,cloud,frontend,cloud,False,5,updates with,word,0.06610164922867305,frontend,0.06610164922867305
+cloud_005,en,cloud,frontend,cloud,False,6,automatic,word,-0.06521401259646915,cloud,0.06521401259646915
+cloud_005,en,cloud,frontend,cloud,False,7,updates,word,-0.0573104519381868,cloud,0.0573104519381868
+cloud_005,en,cloud,frontend,cloud,False,8,creates,word,-0.033344671395126764,cloud,0.033344671395126764
+cloud_005,en,cloud,frontend,cloud,False,9,and,word,0.03263544434248087,frontend,0.03263544434248087
+cloud_005,en,cloud,frontend,cloud,False,10,publishes,word,-0.028741570507611457,cloud,0.028741570507611457
+cloud_005,es,cloud,frontend,cloud,False,1,rolling,word,0.3104158231020719,frontend,0.3104158231020719
+cloud_005,es,cloud,frontend,cloud,False,2,imagenes,word,-0.2037386209215267,cloud,0.2037386209215267
+cloud_005,es,cloud,frontend,cloud,False,3,rollback,word,-0.16179337131890056,cloud,0.16179337131890056
+cloud_005,es,cloud,frontend,cloud,False,4,pipeline,word,-0.04736750386582942,cloud,0.04736750386582942
+cloud_005,es,cloud,frontend,cloud,False,5, un,char,-0.037082509323426056,cloud,0.037082509323426056
+cloud_005,es,cloud,frontend,cloud,False,6,gene,char,0.03220375205378253,frontend,0.03220375205378253
+cloud_005,es,cloud,frontend,cloud,False,7, con,char,-0.030809008466130244,cloud,0.030809008466130244
+cloud_005,es,cloud,frontend,cloud,False,8,un ,char,-0.027976286979228535,cloud,0.027976286979228535
+cloud_005,es,cloud,frontend,cloud,False,9,ling ,char,-0.02663205618095642,cloud,0.02663205618095642
+cloud_005,es,cloud,frontend,cloud,False,10,roll,char,0.02623828365037288,frontend,0.02623828365037288
+cloud_005,es_en,cloud,frontend,cloud,False,1,rolling,word,0.22221522105935074,frontend,0.22221522105935074
+cloud_005,es_en,cloud,frontend,cloud,False,2,images,word,0.14021758444569407,frontend,0.14021758444569407
+cloud_005,es_en,cloud,frontend,cloud,False,3,rollback,word,-0.1158218979119017,cloud,0.1158218979119017
+cloud_005,es_en,cloud,frontend,cloud,False,4,automatic,word,-0.09253682265014028,cloud,0.09253682265014028
+cloud_005,es_en,cloud,frontend,cloud,False,5,updates,word,-0.0813218956456379,cloud,0.0813218956456379
+cloud_005,es_en,cloud,frontend,cloud,False,6, un,char,-0.03840015872685218,cloud,0.03840015872685218
+cloud_005,es_en,cloud,frontend,cloud,False,7,pipeline,word,-0.033908646271275336,cloud,0.033908646271275336
+cloud_005,es_en,cloud,frontend,cloud,False,8, con,char,-0.03190374213885669,cloud,0.03190374213885669
+cloud_005,es_en,cloud,frontend,cloud,False,9,un ,char,-0.0289703658191136,cloud,0.0289703658191136
+cloud_005,es_en,cloud,frontend,cloud,False,10,ling ,char,-0.027578370591148718,cloud,0.027578370591148718
+cloud_005,ru,cloud,cloud,datascience,True,1,rolling,word,-0.11959464829737583,datascience,0.11959464829737583
+cloud_005,ru,cloud,cloud,datascience,True,2,registry,word,-0.11220829305661517,datascience,0.11220829305661517
+cloud_005,ru,cloud,cloud,datascience,True,3,updates,word,0.09640892289035437,cloud,0.09640892289035437
+cloud_005,ru,cloud,cloud,datascience,True,4,rollback,word,0.09577646473300237,cloud,0.09577646473300237
+cloud_005,ru,cloud,cloud,datascience,True,5,pipeline,word,-0.07541302489084076,datascience,0.07541302489084076
+cloud_005,ru,cloud,cloud,datascience,True,6,dat,char,-0.05528749558310329,datascience,0.05528749558310329
+cloud_005,ru,cloud,cloud,datascience,True,7,и,word,0.049377030636533294,cloud,0.049377030636533294
+cloud_005,ru,cloud,cloud,datascience,True,8, и ,char,0.04331482303715782,cloud,0.04331482303715782
+cloud_005,ru,cloud,cloud,datascience,True,9, doc,char,0.0425189340442477,cloud,0.0425189340442477
+cloud_005,ru,cloud,cloud,datascience,True,10,doc,char,0.0425189340442477,cloud,0.0425189340442477
+datascience_002,en,datascience,datascience,frontend,True,1,compare,word,0.17656222042624786,datascience,0.17656222042624786
+datascience_002,en,datascience,datascience,frontend,True,2,engineer,word,-0.1045032002210137,frontend,0.1045032002210137
+datascience_002,en,datascience,datascience,frontend,True,3,regression,word,0.09744685775482276,datascience,0.09744685775482276
+datascience_002,en,datascience,datascience,frontend,True,4,logistic,word,0.07627638917702483,datascience,0.07627638917702483
+datascience_002,en,datascience,datascience,frontend,True,5,logistic regression,word,0.07627638917702483,datascience,0.07627638917702483
+datascience_002,en,datascience,datascience,frontend,True,6,customer,word,0.07531727954349172,datascience,0.07531727954349172
+datascience_002,en,datascience,datascience,frontend,True,7,features,word,-0.0689844109974401,frontend,0.0689844109974401
+datascience_002,en,datascience,datascience,frontend,True,8,churn,word,0.06767780986457377,datascience,0.06767780986457377
+datascience_002,en,datascience,datascience,frontend,True,9,recall,word,0.05899919733656599,datascience,0.05899919733656599
+datascience_002,en,datascience,datascience,frontend,True,10,redi,char,0.035947173564504636,datascience,0.035947173564504636
+datascience_002,es,datascience,datascience,frontend,True,1,recall,word,0.10817636822402257,datascience,0.10817636822402257
+datascience_002,es,datascience,datascience,frontend,True,2,variables,word,-0.10126059501826203,frontend,0.10126059501826203
+datascience_002,es,datascience,datascience,frontend,True,3,ata,char,0.050795475620799925,datascience,0.050795475620799925
+datascience_002,es,datascience,datascience,frontend,True,4,precision,word,0.049192096866255225,datascience,0.049192096866255225
+datascience_002,es,datascience,datascience,frontend,True,5, de ,char,0.04721666396156304,datascience,0.04721666396156304
+datascience_002,es,datascience,datascience,frontend,True,6,ear ,char,0.03356653206949758,datascience,0.03356653206949758
+datascience_002,es,datascience,datascience,frontend,True,7,pred,char,0.03203052952345246,datascience,0.03203052952345246
+datascience_002,es,datascience,datascience,frontend,True,8,el ,char,0.030625253788738337,datascience,0.030625253788738337
+datascience_002,es,datascience,datascience,frontend,True,9,stic,char,0.030484355060198687,datascience,0.030484355060198687
+datascience_002,es,datascience,datascience,frontend,True,10,lient,char,-0.030336151200618958,frontend,0.030336151200618958
+datascience_002,es_en,datascience,datascience,cloud,True,1,regression,word,0.18660080929631873,datascience,0.18660080929631873
+datascience_002,es_en,datascience,datascience,cloud,True,2,feature engineering,word,0.13120511253847925,datascience,0.13120511253847925
+datascience_002,es_en,datascience,datascience,cloud,True,3,engineering,word,-0.10884320703342823,cloud,0.10884320703342823
+datascience_002,es_en,datascience,datascience,cloud,True,4,churn,word,0.09435619480385733,datascience,0.09435619480385733
+datascience_002,es_en,datascience,datascience,cloud,True,5,recall,word,0.07491620876482062,datascience,0.07491620876482062
+datascience_002,es_en,datascience,datascience,cloud,True,6,logistic,word,0.0692235679561112,datascience,0.0692235679561112
+datascience_002,es_en,datascience,datascience,cloud,True,7,logistic regression,word,0.0692235679561112,datascience,0.0692235679561112
+datascience_002,es_en,datascience,datascience,cloud,True,8,feature,word,0.05488236372758581,datascience,0.05488236372758581
+datascience_002,es_en,datascience,datascience,cloud,True,9, cl,char,-0.042385585666031046,cloud,0.042385585666031046
+datascience_002,es_en,datascience,datascience,cloud,True,10,ata,char,0.040281087630041054,datascience,0.040281087630041054
+datascience_002,ru,datascience,cloud,datascience,False,1, пр,char,0.14775096610483593,cloud,0.14775096610483593
+datascience_002,ru,datascience,cloud,datascience,False,2, и ,char,0.10893626931214605,cloud,0.10893626931214605
+datascience_002,ru,datascience,cloud,datascience,False,3,recall,word,-0.10246649126771147,datascience,0.10246649126771147
+datascience_002,ru,datascience,cloud,datascience,False,4,и,word,0.09087041834607776,cloud,0.09087041834607776
+datascience_002,ru,datascience,cloud,datascience,False,5,ть ,char,0.055990960225783745,cloud,0.055990960225783745
+datascience_002,ru,datascience,cloud,datascience,False,6,precision,word,-0.04016120959889464,datascience,0.04016120959889464
+datascience_002,ru,datascience,cloud,datascience,False,7, pre,char,-0.03209638846084071,datascience,0.03209638846084071
+datascience_002,ru,datascience,cloud,datascience,False,8,ll ,char,-0.03064100457252073,datascience,0.03064100457252073
+datascience_002,ru,datascience,cloud,datascience,False,9,1. ,char,-0.020816778455267172,datascience,0.020816778455267172
+datascience_002,ru,datascience,cloud,datascience,False,10,all ,char,-0.020478631840287198,datascience,0.020478631840287198
+datascience_003,en,datascience,datascience,frontend,True,1,loss,word,0.28650909243524836,datascience,0.28650909243524836
+datascience_003,en,datascience,datascience,frontend,True,2,compare,word,0.20174895413745714,datascience,0.20174895413745714
+datascience_003,en,datascience,datascience,frontend,True,3,neural,word,0.11717507625136642,datascience,0.11717507625136642
+datascience_003,en,datascience,datascience,frontend,True,4,validation,word,-0.1132857556620921,frontend,0.1132857556620921
+datascience_003,en,datascience,datascience,frontend,True,5,images,word,-0.10125988947072942,frontend,0.10125988947072942
+datascience_003,en,datascience,datascience,frontend,True,6,dat,char,0.04457903253832188,datascience,0.04457903253832188
+datascience_003,en,datascience,datascience,frontend,True,7,tra,char,0.04043894788493278,datascience,0.04043894788493278
+datascience_003,en,datascience,datascience,frontend,True,8,network,word,-0.03378625501029423,frontend,0.03378625501029423
+datascience_003,en,datascience,datascience,frontend,True,9, loss ,char,0.03259902080870353,datascience,0.03259902080870353
+datascience_003,en,datascience,datascience,frontend,True,10,loss ,char,0.03259902080870353,datascience,0.03259902080870353
+datascience_003,es,datascience,cloud,frontend,False,1,imagenes,word,0.2097219693737873,cloud,0.2097219693737873
+datascience_003,es,datascience,cloud,frontend,False,2,red,word,-0.10511161718155193,frontend,0.10511161718155193
+datascience_003,es,datascience,cloud,frontend,False,3, cl,char,0.05420882305608358,cloud,0.05420882305608358
+datascience_003,es,datascience,cloud,frontend,False,4,ron,char,-0.03900421158828584,frontend,0.03900421158828584
+datascience_003,es,datascience,cloud,frontend,False,5,ida,char,0.03839029066396812,cloud,0.03839029066396812
+datascience_003,es,datascience,cloud,frontend,False,6,para,char,0.036555471215835675,cloud,0.036555471215835675
+datascience_003,es,datascience,cloud,frontend,False,7,vas,char,-0.03643783887825797,frontend,0.03643783887825797
+datascience_003,es,datascience,cloud,frontend,False,8,ena,char,0.03613901476739928,cloud,0.03613901476739928
+datascience_003,es,datascience,cloud,frontend,False,9, de ,char,0.0359554365173989,cloud,0.0359554365173989
+datascience_003,es,datascience,cloud,frontend,False,10, en,char,0.033778173506987696,cloud,0.033778173506987696
+datascience_003,es_en,datascience,datascience,cloud,True,1,loss,word,0.28619415058253833,datascience,0.28619415058253833
+datascience_003,es_en,datascience,datascience,cloud,True,2,training,word,-0.2173827668301203,cloud,0.2173827668301203
+datascience_003,es_en,datascience,datascience,cloud,True,3,neural,word,0.16610395119159793,datascience,0.16610395119159793
+datascience_003,es_en,datascience,datascience,cloud,True,4,validation,word,0.11771055356184691,datascience,0.11771055356184691
+datascience_003,es_en,datascience,datascience,cloud,True,5,network,word,0.07901769559809506,datascience,0.07901769559809506
+datascience_003,es_en,datascience,datascience,cloud,True,6,neural network,word,0.06056686548003151,datascience,0.06056686548003151
+datascience_003,es_en,datascience,datascience,cloud,True,7, cl,char,-0.04279863579538139,cloud,0.04279863579538139
+datascience_003,es_en,datascience,datascience,cloud,True,8,dat,char,0.041031118471176645,datascience,0.041031118471176645
+datascience_003,es_en,datascience,datascience,cloud,True,9,lass,char,0.03440265581105821,datascience,0.03440265581105821
+datascience_003,es_en,datascience,datascience,cloud,True,10,images,word,0.034374942525732526,datascience,0.034374942525732526
+datascience_003,ru,datascience,cloud,backend,False,1,validation,word,-0.24178057361176852,backend,0.24178057361176852
+datascience_003,ru,datascience,cloud,backend,False,2,training,word,0.23486403407283765,cloud,0.23486403407283765
+datascience_003,ru,datascience,cloud,backend,False,3,для,word,0.13173339559553673,cloud,0.13173339559553673
+datascience_003,ru,datascience,cloud,backend,False,4, и ,char,0.07277901893441979,cloud,0.07277901893441979
+datascience_003,ru,datascience,cloud,backend,False,5,и,word,-0.0634647732104563,backend,0.0634647732104563
+datascience_003,ru,datascience,cloud,backend,False,6,ion.,char,-0.054451027072006754,backend,0.054451027072006754
+datascience_003,ru,datascience,cloud,backend,False,7, train,char,0.05419983464191715,cloud,0.05419983464191715
+datascience_003,ru,datascience,cloud,backend,False,8,tion.,char,-0.053797639559080276,backend,0.053797639559080276
+datascience_003,ru,datascience,cloud,backend,False,9,в,word,-0.051988349227565823,backend,0.051988349227565823
+datascience_003,ru,datascience,cloud,backend,False,10,ion. ,char,-0.04926881162714991,backend,0.04926881162714991
+datascience_004,en,datascience,datascience,frontend,True,1,compare,word,0.2083847978770596,datascience,0.2083847978770596
+datascience_004,en,datascience,datascience,frontend,True,2,series,word,0.13896881842106154,datascience,0.13896881842106154
+datascience_004,en,datascience,datascience,frontend,True,3,models,word,0.13245573574172992,datascience,0.13245573574172992
+datascience_004,en,datascience,datascience,frontend,True,4,next,word,0.11584299936975942,datascience,0.11584299936975942
+datascience_004,en,datascience,datascience,frontend,True,5,sales,word,0.07389872626153379,datascience,0.07389872626153379
+datascience_004,en,datascience,datascience,frontend,True,6,time,word,-0.04986535669497146,frontend,0.04986535669497146
+datascience_004,en,datascience,datascience,frontend,True,7,analy,char,0.04138648366785444,datascience,0.04138648366785444
+datascience_004,en,datascience,datascience,frontend,True,8,naly,char,0.04138648366785444,datascience,0.04138648366785444
+datascience_004,en,datascience,datascience,frontend,True,9,aly,char,0.03937127519163611,datascience,0.03937127519163611
+datascience_004,en,datascience,datascience,frontend,True,10, analy,char,0.03660129699603179,datascience,0.03660129699603179
+datascience_004,es,datascience,datascience,cloud,True,1,temporal,word,-0.20946667799240126,cloud,0.20946667799240126
+datascience_004,es,datascience,datascience,cloud,True,2, anal,char,0.033638475770487494,datascience,0.033638475770487494
+datascience_004,es,datascience,datascience,cloud,True,3,anal,char,0.03310251221608294,datascience,0.03310251221608294
+datascience_004,es,datascience,datascience,cloud,True,4, ana,char,0.03277886716436323,datascience,0.03277886716436323
+datascience_004,es,datascience,datascience,cloud,True,5,ar ,char,0.02998511017053758,datascience,0.02998511017053758
+datascience_004,es,datascience,datascience,cloud,True,6,nal,char,0.02918626662797451,datascience,0.02918626662797451
+datascience_004,es,datascience,datascience,cloud,True,7, est,char,0.024907807770895688,datascience,0.024907807770895688
+datascience_004,es,datascience,datascience,cloud,True,8,ora,char,-0.02428170399693754,cloud,0.02428170399693754
+datascience_004,es,datascience,datascience,cloud,True,9,stic,char,0.0241703331975269,datascience,0.0241703331975269
+datascience_004,es,datascience,datascience,cloud,True,10,na ,char,0.023513143151019787,datascience,0.023513143151019787
+datascience_004,es_en,datascience,datascience,frontend,True,1,series,word,0.2032268679435131,datascience,0.2032268679435131
+datascience_004,es_en,datascience,datascience,frontend,True,2,models,word,0.19370218889236632,datascience,0.19370218889236632
+datascience_004,es_en,datascience,datascience,frontend,True,3,sales,word,0.10806889526571994,datascience,0.10806889526571994
+datascience_004,es_en,datascience,datascience,frontend,True,4,time,word,-0.07292269140045649,frontend,0.07292269140045649
+datascience_004,es_en,datascience,datascience,frontend,True,5,anal,char,0.03320089189248283,datascience,0.03320089189248283
+datascience_004,es_en,datascience,datascience,frontend,True,6, anal,char,0.03237260883808277,datascience,0.03237260883808277
+datascience_004,es_en,datascience,datascience,frontend,True,7,eas,char,0.03197717857770043,datascience,0.03197717857770043
+datascience_004,es_en,datascience,datascience,frontend,True,8, un,char,0.03194179774681431,datascience,0.03194179774681431
+datascience_004,es_en,datascience,datascience,frontend,True,9,para,char,0.03172939689946166,datascience,0.03172939689946166
+datascience_004,es_en,datascience,datascience,frontend,True,10, ana,char,0.031641738859704435,datascience,0.031641738859704435
+datascience_004,ru,datascience,cloud,backend,False,1,про,char,0.3194438319817257,cloud,0.3194438319817257
+datascience_004,ru,datascience,cloud,backend,False,2, пр,char,0.2488365048514601,cloud,0.2488365048514601
+datascience_004,ru,datascience,cloud,backend,False,3,для,word,0.17736146015345663,cloud,0.17736146015345663
+datascience_004,ru,datascience,cloud,backend,False,4, и ,char,0.09868939092475884,cloud,0.09868939092475884
+datascience_004,ru,datascience,cloud,backend,False,5,и,word,-0.08544685874092717,backend,0.08544685874092717
+datascience_004,ru,datascience,cloud,backend,False,6,ть ,char,-0.07198971241665923,backend,0.07198971241665923
+datascience_004,ru,datascience,cloud,backend,False,7,rim,char,0.05944508236180598,cloud,0.05944508236180598
+datascience_004,ru,datascience,cloud,backend,False,8,ima,char,0.054864625433558065,cloud,0.054864625433558065
+datascience_004,ru,datascience,cloud,backend,False,9,ma ,char,-0.03636965052058596,backend,0.03636965052058596
+datascience_004,ru,datascience,cloud,backend,False,10,rima,char,0.01362308239424342,cloud,0.01362308239424342
+datascience_005,en,datascience,datascience,cloud,True,1,number,word,0.10159229162012408,datascience,0.10159229162012408
+datascience_005,en,datascience,datascience,cloud,True,2,use the,word,-0.07848335502077712,cloud,0.07848335502077712
+datascience_005,en,datascience,datascience,cloud,True,3,to,word,-0.0641059756981553,cloud,0.0641059756981553
+datascience_005,en,datascience,datascience,cloud,True,4,score,word,0.06287086555794442,datascience,0.06287086555794442
+datascience_005,en,datascience,datascience,cloud,True,5,and use,word,-0.04745203598322592,cloud,0.04745203598322592
+datascience_005,en,datascience,datascience,cloud,True,6,the,word,-0.04435548889861912,cloud,0.04435548889861912
+datascience_005,en,datascience,datascience,cloud,True,7, cl,char,-0.04334464207990608,cloud,0.04334464207990608
+datascience_005,en,datascience,datascience,cloud,True,8, sc,char,0.036265810109061485,datascience,0.036265810109061485
+datascience_005,en,datascience,datascience,cloud,True,9,and,word,0.036217222388216445,datascience,0.036217222388216445
+datascience_005,en,datascience,datascience,cloud,True,10,use,word,0.03607909253936521,datascience,0.03607909253936521
+datascience_005,es,datascience,backend,cloud,False,1,numero,word,0.22726205457339507,backend,0.22726205457339507
+datascience_005,es,datascience,backend,cloud,False,2,score,word,-0.1693899699319634,cloud,0.1693899699319634
+datascience_005,es,datascience,backend,cloud,False,3,usar,word,0.16035083072366094,backend,0.16035083072366094
+datascience_005,es,datascience,backend,cloud,False,4,clusters,word,-0.15675116480633772,cloud,0.15675116480633772
+datascience_005,es,datascience,backend,cloud,False,5,variables,word,-0.08022310882171649,cloud,0.08022310882171649
+datascience_005,es,datascience,backend,cloud,False,6,ar ,char,0.046107311473402295,backend,0.046107311473402295
+datascience_005,es,datascience,backend,cloud,False,7, cl,char,-0.04557544451905862,cloud,0.04557544451905862
+datascience_005,es,datascience,backend,cloud,False,8,ra ,char,-0.02595146597166085,cloud,0.02595146597166085
+datascience_005,es,datascience,backend,cloud,False,9,cion,char,0.025684933573300473,backend,0.025684933573300473
+datascience_005,es,datascience,backend,cloud,False,10, par,char,0.024851080694826687,backend,0.024851080694826687
+datascience_005,es_en,datascience,datascience,cloud,True,1,number,word,0.13526934324108397,datascience,0.13526934324108397
+datascience_005,es_en,datascience,datascience,cloud,True,2,score,word,0.08371206670700794,datascience,0.08371206670700794
+datascience_005,es_en,datascience,datascience,cloud,True,3,clusters,word,-0.0444160197340453,cloud,0.0444160197340453
+datascience_005,es_en,datascience,datascience,cloud,True,4, cl,char,-0.04039511475556208,cloud,0.04039511475556208
+datascience_005,es_en,datascience,datascience,cloud,True,5,number of,word,0.03929101961870608,datascience,0.03929101961870608
+datascience_005,es_en,datascience,datascience,cloud,True,6,variables,word,0.038330776950313776,datascience,0.038330776950313776
+datascience_005,es_en,datascience,datascience,cloud,True,7, sc,char,0.03379798495874756,datascience,0.03379798495874756
+datascience_005,es_en,datascience,datascience,cloud,True,8,scor,char,0.032373152118168956,datascience,0.032373152118168956
+datascience_005,es_en,datascience,datascience,cloud,True,9,ra ,char,-0.027877505344669262,cloud,0.027877505344669262
+datascience_005,es_en,datascience,datascience,cloud,True,10, scor,char,0.02701370528595121,datascience,0.02701370528595121
+datascience_005,ru,datascience,cloud,datascience,False,1,для,word,0.1861947798107683,cloud,0.1861947798107683
+datascience_005,ru,datascience,cloud,datascience,False,2,score,word,-0.09258125511611724,datascience,0.09258125511611724
+datascience_005,ru,datascience,cloud,datascience,False,3, пр,char,0.08597025311596432,cloud,0.08597025311596432
+datascience_005,ru,datascience,cloud,datascience,False,4, sc,char,-0.07060887306551174,datascience,0.07060887306551174
+datascience_005,ru,datascience,cloud,datascience,False,5,scor,char,-0.06763219142893538,datascience,0.06763219142893538
+datascience_005,ru,datascience,cloud,datascience,False,6, и ,char,0.06338556622113027,cloud,0.06338556622113027
+datascience_005,ru,datascience,cloud,datascience,False,7, scor,char,-0.05643553276602068,datascience,0.05643553276602068
+datascience_005,ru,datascience,cloud,datascience,False,8,ть ,char,0.055160793303127925,cloud,0.055160793303127925
+datascience_005,ru,datascience,cloud,datascience,False,9,и,word,0.05306163161357351,cloud,0.05306163161357351
+datascience_005,ru,datascience,cloud,datascience,False,10, pca,char,-0.04699432071430763,datascience,0.04699432071430763
+frontend_005,en,frontend,frontend,backend,True,1,loading,word,0.20885687954434257,frontend,0.20885687954434257
+frontend_005,en,frontend,frontend,backend,True,2,events,word,-0.1716006979274198,backend,0.1716006979274198
+frontend_005,en,frontend,frontend,backend,True,3,that,word,-0.14487997489830648,backend,0.14487997489830648
+frontend_005,en,frontend,frontend,backend,True,4,events and,word,0.13944907409225785,frontend,0.13944907409225785
+frontend_005,en,frontend,frontend,backend,True,5,fetch,word,0.13230845373290268,frontend,0.13230845373290268
+frontend_005,en,frontend,frontend,backend,True,6,an,word,0.10340202172094105,frontend,0.10340202172094105
+frontend_005,en,frontend,frontend,backend,True,7,states,word,0.09915105600285767,frontend,0.09915105600285767
+frontend_005,en,frontend,frontend,backend,True,8,updates the,word,0.06964291837164231,frontend,0.06964291837164231
+frontend_005,en,frontend,frontend,backend,True,9,the,word,-0.05912195234464143,backend,0.05912195234464143
+frontend_005,en,frontend,frontend,backend,True,10,pi ,char,-0.05708057927526205,backend,0.05708057927526205
+frontend_005,es,frontend,backend,frontend,False,1,fetch,word,-0.27200544791984343,frontend,0.27200544791984343
+frontend_005,es,frontend,backend,frontend,False,2, un,char,0.05675480896946146,backend,0.05675480896946146
+frontend_005,es,frontend,backend,frontend,False,3,pi ,char,0.05655219219169984,backend,0.05655219219169984
+frontend_005,es,frontend,backend,frontend,False,4,api,char,0.05351345536584792,backend,0.05351345536584792
+frontend_005,es,frontend,backend,frontend,False,5, con,char,0.052823545152855776,backend,0.052823545152855776
+frontend_005,es,frontend,backend,frontend,False,6,api ,char,0.051308525306083534,backend,0.051308525306083534
+frontend_005,es,frontend,backend,frontend,False,7,que,char,0.04964998935442969,backend,0.04964998935442969
+frontend_005,es,frontend,backend,frontend,False,8,eventos,word,0.0471947137503923,backend,0.0471947137503923
+frontend_005,es,frontend,backend,frontend,False,9, api,char,0.04088182600859774,backend,0.04088182600859774
+frontend_005,es,frontend,backend,frontend,False,10,etch,char,-0.03978819828444041,frontend,0.03978819828444041
+frontend_005,es_en,frontend,frontend,backend,True,1,loading,word,0.2788785667141569,frontend,0.2788785667141569
+frontend_005,es_en,frontend,frontend,backend,True,2,events,word,-0.2291318188299732,backend,0.2291318188299732
+frontend_005,es_en,frontend,frontend,backend,True,3,fetch,word,0.17666639481398744,frontend,0.17666639481398744
+frontend_005,es_en,frontend,frontend,backend,True,4,states,word,0.13239259557357036,frontend,0.13239259557357036
+frontend_005,es_en,frontend,frontend,backend,True,5,update,word,0.1145361178260571,frontend,0.1145361178260571
+frontend_005,es_en,frontend,frontend,backend,True,6,handle,word,-0.08515250870729102,backend,0.08515250870729102
+frontend_005,es_en,frontend,frontend,backend,True,7,user,word,-0.07572421297438933,backend,0.07572421297438933
+frontend_005,es_en,frontend,frontend,backend,True,8, un,char,-0.05792944623873376,backend,0.05792944623873376
+frontend_005,es_en,frontend,frontend,backend,True,9,pi ,char,-0.05772263596225616,backend,0.05772263596225616
+frontend_005,es_en,frontend,frontend,backend,True,10,api,char,-0.054621007311165676,backend,0.054621007311165676
+frontend_005,ru,frontend,frontend,backend,True,1,и,word,-0.33803096719164943,backend,0.33803096719164943
+frontend_005,ru,frontend,frontend,backend,True,2,fetch,word,0.19071163695686846,frontend,0.19071163695686846
+frontend_005,ru,frontend,frontend,backend,True,3,pi ,char,-0.10850706136915847,backend,0.10850706136915847
+frontend_005,ru,frontend,frontend,backend,True,4,на,word,-0.10636685391311297,backend,0.10636685391311297
+frontend_005,ru,frontend,frontend,backend,True,5,api,char,-0.10267661712873469,backend,0.10267661712873469
+frontend_005,ru,frontend,frontend,backend,True,6,api ,char,-0.09844600338880134,backend,0.09844600338880134
+frontend_005,ru,frontend,frontend,backend,True,7, и ,char,-0.0820535222114508,backend,0.0820535222114508
+frontend_005,ru,frontend,frontend,backend,True,8, api,char,-0.0784402271898001,backend,0.0784402271898001
+frontend_005,ru,frontend,frontend,backend,True,9,etch,char,0.0763418765161799,frontend,0.0763418765161799
+frontend_005,ru,frontend,frontend,backend,True,10,fetc,char,0.0763418765161799,frontend,0.0763418765161799
