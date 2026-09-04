@@ -1755,3 +1755,8 @@ ES / EN / RU / ES-EN
 SHA-256 deployment:
 1a495520f642416e7dd391f97417cd3d12dcd82ab11636b7f190e5ed6dafea61
 ```
+# 📄 Licencia
+
+Este proyecto se distribuye bajo la licencia [MIT](LICENSE).
+
+Las dependencias, modelos preentrenados y recursos de terceros conservan sus respectivas licencias.
