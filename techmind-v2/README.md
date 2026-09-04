@@ -137,7 +137,7 @@ techmind-v2/
 │   ├── 04_evaluacion_explicabilidad_empaquetado.ipynb
 │   ├── 05_modelo_v1.1.0.ipynb
 │   ├── 06_evaluacion_multilingue.ipynb
-│   └── v1.2.0-multilingual/
+│   └── 07_v1.2.0_multilingual/
 │
 ├── models/
 │   ├── v1.0.0/
@@ -172,7 +172,7 @@ techmind-v2/
 ├── reports/
 │
 ├── deploy/
-│   └── v1.2.0-multilingual/
+│   └── 07_v1.2.0_multilingual/
 │       ├── README.md
 │       ├── ARTIFACT_CERTIFICATION.md
 │       ├── requirements-v1.2.txt
@@ -387,6 +387,421 @@ semántica multilingual de forma robusta.
 ```
 
 Esta evidencia motivó directamente `v1.2.0-multilingual`.
+
+---
+
+## 07 — Desarrollo y validación de v1.2.0 Multilingual
+
+```text
+07_v1.2.0_multilingual/
+└── 07_01_embeddings_baseline.ipynb
+```
+
+Esta etapa desarrolla la evolución semántica multilingual del proyecto a partir de las limitaciones identificadas durante la evaluación de `v1.1.0`.
+
+El notebook cubre el ciclo completo de experimentación, selección, validación y preparación para deployment de `v1.2.0-multilingual`.
+
+### 1. Validación del encoder multilingual
+
+Se utiliza:
+
+```text
+sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+```
+
+Configuración:
+
+```text
+Embedding dimension = 384
+Max sequence length = 128
+Normalize embeddings = True
+```
+
+El smoke test semántico con textos equivalentes en Español, Inglés y Ruso mostró similitudes cross-language elevadas:
+
+```text
+ES ↔ EN = 0.9275
+ES ↔ RU = 0.9687
+EN ↔ RU = 0.8995
+```
+
+También se auditó la longitud completa del corpus:
+
+```text
+Documentos              4,583
+Longitud media           60.86 tokens
+Percentil 95             89 tokens
+Percentil 99            109 tokens
+Máxima                  139 tokens
+Documentos >128            9
+Porcentaje >128          0.20%
+```
+
+Esto permitió mantener `max_seq_length = 128` sin introducir una estrategia adicional de chunking.
+
+### 2. Generación y validación de embeddings
+
+Se generaron embeddings normalizados para:
+
+```text
+Train: 3,666 × 384
+Test:    917 × 384
+```
+
+Las validaciones comprobaron:
+
+- dimensiones correctas;
+- ausencia de valores `NaN`;
+- ausencia de valores infinitos;
+- norma L2 ≈ `1.0`;
+- cache local reproducible para experimentación.
+
+### 3. Baseline MiniLM-only
+
+Antes de construir el modelo híbrido se evaluó MiniLM como representación independiente.
+
+Resultados de validación cruzada:
+
+| Clasificador | F1 Macro CV |
+|---|---:|
+| Logistic Regression | 0.7604 |
+| LinearSVC | **0.7729** |
+| SGDClassifier | 0.7724 |
+
+Incluso después de optimizar `LinearSVC`, el mejor resultado MiniLM-only fue aproximadamente:
+
+```text
+F1 Macro CV = 0.7764
+```
+
+frente al baseline léxico de v1.1:
+
+```text
+F1 Macro CV = 0.8432
+```
+
+Conclusión:
+
+> MiniLM aportaba representación semántica multilingual, pero por sí solo perdía discriminación sobre vocabulario técnico especializado.
+
+Esta evidencia motivó una arquitectura híbrida en lugar de sustituir TF-IDF.
+
+### 4. Arquitectura híbrida
+
+Se combina el extractor Word + Character de v1.1 con MiniLM:
+
+```text
+TF-IDF Word + Character    60,000
+MiniLM                        384
+                              ------
+Total                      60,384
+```
+
+Arquitectura:
+
+```text
+TF-IDF Word
++
+TF-IDF Character
++
+MiniLM Multilingual 384
+        ↓
+    LinearSVC
+```
+
+### 5. Selección de `C`
+
+Se realizó una búsqueda controlada:
+
+| C | F1 Macro CV |
+|---:|---:|
+| 0.1 | 0.8461 |
+| **0.3** | **0.8574** |
+| 1.0 | 0.8569 |
+| 3.0 | 0.8555 |
+
+Se congeló:
+
+```text
+C = 0.3
+```
+
+sin microajustes posteriores.
+
+### 6. Evaluación del modelo híbrido
+
+Sobre el TEST reservado de 917 documentos:
+
+```text
+Accuracy         0.8746
+Precision Macro  0.8763
+Recall Macro     0.8749
+F1 Macro         0.8753
+F1 Weighted      0.8749
+```
+
+Comparación contra v1.1:
+
+```text
+F1 Macro CV:
+0.8432 → 0.8574
+
+Accuracy Test:
+0.8386 → 0.8746
+
+F1 Macro Test:
+0.8401 → 0.8753
+```
+
+### 7. Benchmark multilingual de desarrollo
+
+Sobre los 80 documentos utilizados durante desarrollo:
+
+```text
+79 / 80 correctos
+Accuracy = 98.75%
+```
+
+Este conjunto se utilizó durante experimentación y no se considera la validación final independiente.
+
+### 8. Calibración del Decision Margin
+
+Se generaron predicciones OOF de 5 folds sobre TRAIN y se analizó:
+
+```text
+decision_margin =
+score_top1 - score_top2
+```
+
+Threshold operacional congelado:
+
+```text
+0.8132
+```
+
+Este control permite separar predicciones aceptables de casos que requieren revisión.
+
+### 9. Semantic Domain Support
+
+Dado que MiniLM genera embeddings densos incluso para contenido no técnico, se añadió un detector de soporte semántico basado en:
+
+```text
+NearestNeighbors
+n_neighbors = 5
+metric = cosine
+```
+
+Se construyó además un challenge OOD controlado y se congeló:
+
+```text
+domain_similarity_5nn threshold = 0.4266
+```
+
+La regla operacional final quedó:
+
+```text
+Entrada inválida
+    → rejected_invalid
+
+domain_similarity_5nn < 0.4266
+    → rejected_ood
+
+decision_margin < 0.8132
+    → review
+
+caso contrario
+    → accepted
+```
+
+### 10. Benchmark multilingual final independiente
+
+Una vez congelados arquitectura, `C` y thresholds, se evaluó el modelo sobre un holdout independiente:
+
+```text
+320 documentos
+80 casos semánticos
+4 idiomas
+4 categorías
+```
+
+Resultados globales:
+
+```text
+244 / 320 correctos
+Accuracy         0.7625
+Precision Macro  0.8167
+Recall Macro     0.7625
+F1 Macro         0.7570
+F1 Weighted      0.7570
+```
+
+Por idioma:
+
+| Idioma | Accuracy |
+|---|---:|
+| Inglés | 0.7750 |
+| Español | 0.7500 |
+| Español/Inglés | **0.7875** |
+| Ruso | 0.7375 |
+
+Consistencia cross-language:
+
+```text
+64 / 80 casos
+80%
+```
+
+### 11. Comparación final v1.1 vs v1.2
+
+Sobre exactamente los mismos 320 documentos:
+
+```text
+v1.1 Accuracy = 0.5656
+v1.2 Accuracy = 0.7625
+Δ = +0.1969
+```
+
+```text
+v1.1 F1 Macro = 0.5705
+v1.2 F1 Macro = 0.7570
+Δ = +0.1864
+```
+
+La comparación pareada mostró:
+
+```text
+Solo v1.1 correcta = 14
+Solo v1.2 correcta = 77
+```
+
+con diferencia estadísticamente significativa:
+
+```text
+p < 0.001
+```
+
+### 12. Rendimiento operacional final
+
+Aplicando simultáneamente Domain Support y Decision Margin:
+
+```text
+Accepted                  120
+Review                    160
+Rejected OOD               40
+Coverage                 37.50%
+Accepted Accuracy        91.67%
+Error Capture            86.84%
+Accepted Errors              10
+```
+
+### 13. Análisis de errores
+
+La principal limitación detectada fue:
+
+```text
+cloud ↔ backend
+```
+
+Para los 80 documentos reales `cloud` del benchmark final:
+
+```text
+Predicho backend       42
+Predicho cloud         32
+Predicho datascience    6
+```
+
+Esta evidencia identifica la frontera `Cloud ↔ Backend` como prioridad de una futura versión.
+
+### 14. Empaquetado e integración
+
+La etapa también construye y valida:
+
+```text
+techmind_v12/
+techmind_api_v12/
+```
+
+Incluye:
+
+- predictor multilingual;
+- explicabilidad TF-IDF diferencial;
+- smoke tests;
+- FastAPI;
+- `/health`;
+- `/model-info`;
+- `/predict`;
+- OpenAPI;
+- pruebas de importación independiente;
+- pruebas HTTP reales mediante Uvicorn.
+
+### 15. Deployment
+
+Finalmente se prepara:
+
+```text
+deploy/v1.2.0-multilingual/
+```
+
+con:
+
+- `requirements-v1.2.txt`;
+- `start_server.py`;
+- `smoke_test_v12.py`;
+- paquete para OCI;
+- Dockerfile CPU-only;
+- Docker Compose;
+- smoke test Docker.
+
+Artefacto final:
+
+```text
+models/experimental/v1.2.0-multilingual/
+techmind_hybrid_v1_2_0_multilingual.joblib
+```
+
+SHA-256 certificado de deployment:
+
+```text
+1a495520f642416e7dd391f97417cd3d12dcd82ab11636b7f190e5ed6dafea61
+```
+
+### Conclusión de la Etapa 07
+
+La Etapa 07 demuestra que la evolución hacia v1.2 no consistió simplemente en añadir un modelo de embeddings.
+
+El proceso experimental mostró:
+
+```text
+v1.1
+Word + Character TF-IDF
+        ↓
+Notebook 06
+Limitaciones multilingual
+        ↓
+MiniLM-only
+Semántica útil pero
+menor discriminación técnica
+        ↓
+Modelo híbrido
+TF-IDF + MiniLM
+        ↓
+Mejor CV/Test
+        ↓
+Calibración operacional
+        ↓
+Benchmark final independiente
+        ↓
+Predictor + API + Docker
+```
+
+El resultado es:
+
+```text
+v1.2.0-multilingual
+validated_experimental_candidate
+```
+
+con `v1.1.0` preservado como baseline estable y fallback.
 
 ---
 
