@@ -1686,4 +1686,8 @@ Sitio:
 ```text
 https://indexmind.tech/
 ```
+# 📄 Licencia
 
+El código original de este proyecto está disponible bajo la licencia MIT.
+
+Los modelos preentrenados, dependencias y datasets de terceros están sujetos a sus propias licencias. Consulta el archivo [`LICENSE`](../LICENSE).
