@@ -1,0 +1,46 @@
+{
+  "name": "TechMind Multilingual Final Independent Benchmark v1",
+  "benchmark_version": "final_v1",
+  "purpose": "Final independent evaluation of the frozen TechMind v1.2.0-multilingual candidate; do not tune architecture or thresholds on these results.",
+  "total_rows": 320,
+  "semantic_cases": 80,
+  "languages": [
+    "es",
+    "en",
+    "ru",
+    "es_en"
+  ],
+  "categories": {
+    "backend": 20,
+    "cloud": 20,
+    "datascience": 20,
+    "frontend": 20
+  },
+  "rows_by_category": {
+    "backend": 80,
+    "cloud": 80,
+    "datascience": 80,
+    "frontend": 80
+  },
+  "rows_by_language": {
+    "es": 80,
+    "en": 80,
+    "ru": 80,
+    "es_en": 80
+  },
+  "case_difficulty_distribution": {
+    "easy": 20,
+    "medium": 40,
+    "difficult": 20
+  },
+  "origin": "synthetic_controlled_independent",
+  "split_role": "final_independent_evaluation",
+  "sha256_csv": "5d994e36a49b362fa4277656e7c4254bfb7fa9bab00db3b9f194228c115e13f8",
+  "methodology_notes": [
+    "80 new semantic cases, 20 per category.",
+    "Each semantic case has controlled ES, EN, RU, and ES/EN variants.",
+    "The benchmark is separate from the earlier 80-row multilingual development benchmark.",
+    "Do not change model architecture, C, OOD threshold 0.4266, or decision-margin threshold 0.8132 after inspecting these results.",
+    "Counterfactual development examples are not included."
+  ]
+}

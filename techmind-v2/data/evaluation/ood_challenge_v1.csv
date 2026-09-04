@@ -1,0 +1,121 @@
+﻿ood_id,dominio,idioma,texto,domain
+ood_001,cocina,es,"Preparar una tortilla de patatas con cebolla, huevos y aceite de oliva.",OOD
+ood_002,cocina,es,Hornear un pastel de chocolate y decorar la superficie con crema.,OOD
+ood_003,cocina,es,Cocinar arroz con verduras y servirlo caliente.,OOD
+ood_004,cocina,en,"Prepare a potato omelette with onions, eggs and olive oil.",OOD
+ood_005,cocina,en,Bake a chocolate cake and decorate the top with cream.,OOD
+ood_006,cocina,en,Cook rice with vegetables and serve it hot.,OOD
+ood_007,cocina,ru,"Приготовить картофельный омлет с луком, яйцами и оливковым маслом.",OOD
+ood_008,cocina,ru,Испечь шоколадный торт и украсить его кремом.,OOD
+ood_009,cocina,ru,Приготовить рис с овощами и подать горячим.,OOD
+ood_010,cocina,es_en,"Preparar una potato omelette con cebolla, huevos y olive oil.",OOD
+ood_011,cocina,es_en,Hornear un chocolate cake y decorar la superficie con crema.,OOD
+ood_012,cocina,es_en,Cocinar rice con verduras y servirlo hot.,OOD
+ood_013,deportes,es,El equipo marcó dos goles durante la segunda mitad del partido.,OOD
+ood_014,deportes,es,La corredora entrenó durante meses para completar el maratón.,OOD
+ood_015,deportes,es,El jugador lanzó la pelota desde fuera del área.,OOD
+ood_016,deportes,en,The team scored two goals during the second half of the match.,OOD
+ood_017,deportes,en,The runner trained for months to complete the marathon.,OOD
+ood_018,deportes,en,The player kicked the ball from outside the penalty area.,OOD
+ood_019,deportes,ru,Команда забила два гола во втором тайме матча.,OOD
+ood_020,deportes,ru,Бегунья тренировалась несколько месяцев перед марафоном.,OOD
+ood_021,deportes,ru,Игрок ударил по мячу из-за пределов штрафной площади.,OOD
+ood_022,deportes,es_en,El team marcó dos goals durante la segunda mitad del match.,OOD
+ood_023,deportes,es_en,La runner entrenó durante meses para completar el marathon.,OOD
+ood_024,deportes,es_en,El player lanzó la ball desde fuera del área.,OOD
+ood_025,viajes,es,Reservar un hotel cerca del centro histórico para tres noches.,OOD
+ood_026,viajes,es,El vuelo sale por la mañana y llega a la ciudad por la tarde.,OOD
+ood_027,viajes,es,Visitaremos varios museos y monumentos durante las vacaciones.,OOD
+ood_028,viajes,en,Book a hotel near the historic center for three nights.,OOD
+ood_029,viajes,en,The flight leaves in the morning and arrives in the city in the afternoon.,OOD
+ood_030,viajes,en,We will visit several museums and monuments during the vacation.,OOD
+ood_031,viajes,ru,Забронировать отель рядом с историческим центром на три ночи.,OOD
+ood_032,viajes,ru,Самолёт вылетает утром и прибывает в город днём.,OOD
+ood_033,viajes,ru,Во время отпуска мы посетим несколько музеев и памятников.,OOD
+ood_034,viajes,es_en,Reservar un hotel near the historic center por tres noches.,OOD
+ood_035,viajes,es_en,El flight sale por la mañana y arrives por la tarde.,OOD
+ood_036,viajes,es_en,Visitaremos varios museums y monuments durante las vacaciones.,OOD
+ood_037,historia,es,El Imperio Romano se extendió por gran parte de Europa y el Mediterráneo.,OOD
+ood_038,historia,es,La Revolución Industrial transformó la producción durante los siglos XVIII y XIX.,OOD
+ood_039,historia,es,La antigua civilización egipcia se desarrolló alrededor del río Nilo.,OOD
+ood_040,historia,en,The Roman Empire expanded across much of Europe and the Mediterranean.,OOD
+ood_041,historia,en,The Industrial Revolution transformed production during the eighteenth and nineteenth centuries.,OOD
+ood_042,historia,en,Ancient Egyptian civilization developed around the Nile River.,OOD
+ood_043,historia,ru,Римская империя занимала значительную часть Европы и Средиземноморья.,OOD
+ood_044,historia,ru,Промышленная революция изменила производство в восемнадцатом и девятнадцатом веках.,OOD
+ood_045,historia,ru,Древнеегипетская цивилизация развивалась вокруг реки Нил.,OOD
+ood_046,historia,es_en,El Roman Empire se extendió por gran parte de Europe.,OOD
+ood_047,historia,es_en,La Industrial Revolution transformó la producción durante varios siglos.,OOD
+ood_048,historia,es_en,La ancient Egyptian civilization se desarrolló alrededor del Nile.,OOD
+ood_049,musica,es,La banda interpretó varias canciones durante el concierto.,OOD
+ood_050,musica,es,El pianista practicó la pieza antes de la presentación.,OOD
+ood_051,musica,es,La melodía comienza lentamente y aumenta de intensidad.,OOD
+ood_052,musica,en,The band performed several songs during the concert.,OOD
+ood_053,musica,en,The pianist practiced the piece before the performance.,OOD
+ood_054,musica,en,The melody begins slowly and gradually becomes more intense.,OOD
+ood_055,musica,ru,Группа исполнила несколько песен во время концерта.,OOD
+ood_056,musica,ru,Пианист репетировал произведение перед выступлением.,OOD
+ood_057,musica,ru,Мелодия начинается медленно и постепенно становится интенсивнее.,OOD
+ood_058,musica,es_en,La band interpretó varias songs durante el concert.,OOD
+ood_059,musica,es_en,El pianist practicó la piece antes de la presentación.,OOD
+ood_060,musica,es_en,La melody comienza lentamente y aumenta de intensidad.,OOD
+ood_061,literatura,es,La novela cuenta la historia de una familia durante varias generaciones.,OOD
+ood_062,literatura,es,El personaje principal abandona su ciudad para comenzar una nueva vida.,OOD
+ood_063,literatura,es,El poema describe un paisaje durante una noche de invierno.,OOD
+ood_064,literatura,en,The novel tells the story of a family across several generations.,OOD
+ood_065,literatura,en,The main character leaves the city to begin a new life.,OOD
+ood_066,literatura,en,The poem describes a landscape during a winter night.,OOD
+ood_067,literatura,ru,Роман рассказывает историю семьи на протяжении нескольких поколений.,OOD
+ood_068,literatura,ru,"Главный герой покидает город, чтобы начать новую жизнь.",OOD
+ood_069,literatura,ru,Стихотворение описывает зимний ночной пейзаж.,OOD
+ood_070,literatura,es_en,La novel cuenta la historia de una family durante varias generaciones.,OOD
+ood_071,literatura,es_en,El main character abandona su ciudad para comenzar una nueva vida.,OOD
+ood_072,literatura,es_en,El poem describe un paisaje durante una winter night.,OOD
+ood_073,salud_general,es,Dormir suficientes horas ayuda a mantener una rutina saludable.,OOD
+ood_074,salud_general,es,Beber agua regularmente es importante durante los días calurosos.,OOD
+ood_075,salud_general,es,Caminar diariamente puede formar parte de un estilo de vida activo.,OOD
+ood_076,salud_general,en,Getting enough sleep helps maintain a healthy daily routine.,OOD
+ood_077,salud_general,en,Drinking water regularly is important during hot days.,OOD
+ood_078,salud_general,en,Walking every day can be part of an active lifestyle.,OOD
+ood_079,salud_general,ru,Достаточный сон помогает поддерживать здоровый распорядок дня.,OOD
+ood_080,salud_general,ru,В жаркую погоду важно регулярно пить воду.,OOD
+ood_081,salud_general,ru,Ежедневные прогулки могут быть частью активного образа жизни.,OOD
+ood_082,salud_general,es_en,Dormir enough hours ayuda a mantener una healthy routine.,OOD
+ood_083,salud_general,es_en,Beber water regularmente es importante durante los hot days.,OOD
+ood_084,salud_general,es_en,Caminar every day puede formar parte de un active lifestyle.,OOD
+ood_085,vida_cotidiana,es,Comprar alimentos para preparar la cena de esta noche.,OOD
+ood_086,vida_cotidiana,es,Organizar la habitación y guardar la ropa en el armario.,OOD
+ood_087,vida_cotidiana,es,Lavar el automóvil durante el fin de semana.,OOD
+ood_088,vida_cotidiana,en,Buy groceries to prepare dinner tonight.,OOD
+ood_089,vida_cotidiana,en,Organize the room and put the clothes in the closet.,OOD
+ood_090,vida_cotidiana,en,Wash the car during the weekend.,OOD
+ood_091,vida_cotidiana,ru,Купить продукты для приготовления сегодняшнего ужина.,OOD
+ood_092,vida_cotidiana,ru,Убрать комнату и сложить одежду в шкаф.,OOD
+ood_093,vida_cotidiana,ru,Помыть автомобиль в выходные.,OOD
+ood_094,vida_cotidiana,es_en,Comprar groceries para preparar dinner esta noche.,OOD
+ood_095,vida_cotidiana,es_en,Organizar la room y guardar la clothes en el armario.,OOD
+ood_096,vida_cotidiana,es_en,Lavar el car durante el weekend.,OOD
+ood_097,jardineria,es,Regar las plantas del jardín durante las primeras horas de la mañana.,OOD
+ood_098,jardineria,es,Plantar flores nuevas alrededor de la entrada de la casa.,OOD
+ood_099,jardineria,es,Podar las ramas secas para mantener el árbol en buenas condiciones.,OOD
+ood_100,jardineria,en,Water the garden plants during the early morning.,OOD
+ood_101,jardineria,en,Plant new flowers around the entrance of the house.,OOD
+ood_102,jardineria,en,Prune dry branches to keep the tree in good condition.,OOD
+ood_103,jardineria,ru,Поливать растения в саду ранним утром.,OOD
+ood_104,jardineria,ru,Посадить новые цветы возле входа в дом.,OOD
+ood_105,jardineria,ru,"Обрезать сухие ветви, чтобы поддерживать дерево в хорошем состоянии.",OOD
+ood_106,jardineria,es_en,Regar las garden plants durante las primeras horas de la morning.,OOD
+ood_107,jardineria,es_en,Plantar new flowers alrededor de la entrada de la house.,OOD
+ood_108,jardineria,es_en,Podar dry branches para mantener el tree en buenas condiciones.,OOD
+ood_109,cine,es,La película comienza con una escena ambientada en una pequeña ciudad.,OOD
+ood_110,cine,es,El actor interpreta a un detective que investiga un misterio.,OOD
+ood_111,cine,es,El director utilizó diferentes locaciones para filmar la historia.,OOD
+ood_112,cine,en,The movie begins with a scene set in a small town.,OOD
+ood_113,cine,en,The actor plays a detective investigating a mystery.,OOD
+ood_114,cine,en,The director used several locations to film the story.,OOD
+ood_115,cine,ru,Фильм начинается со сцены в небольшом городе.,OOD
+ood_116,cine,ru,"Актёр играет детектива, расследующего загадочное дело.",OOD
+ood_117,cine,ru,Режиссёр использовал несколько мест для съёмок истории.,OOD
+ood_118,cine,es_en,La movie comienza con una scene ambientada en una pequeña ciudad.,OOD
+ood_119,cine,es_en,El actor interpreta a un detective investigating a mystery.,OOD
+ood_120,cine,es_en,El director utilizó diferentes locations para filmar la story.,OOD

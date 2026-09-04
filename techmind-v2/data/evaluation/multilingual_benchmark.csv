@@ -1,0 +1,81 @@
+﻿case_id,idioma,categoria_real,texto,dificultad,origen
+backend_001,es,backend,"Crear una API REST con Spring Boot y Java usando controladores, servicios y repositorios para gestionar usuarios y pedidos.",facil,synthetic_controlled
+backend_001,en,backend,"Build a REST API with Spring Boot and Java using controllers, services, and repositories to manage users and orders.",facil,synthetic_controlled
+backend_001,ru,backend,"Создать REST API на Spring Boot и Java с контроллерами, сервисами и репозиториями для управления пользователями и заказами.",facil,synthetic_controlled
+backend_001,es_en,backend,"Crear una REST API con Spring Boot y Java using controllers, services y repositories para gestionar users y orders.",facil,synthetic_controlled
+backend_002,es,backend,"Implementar autenticación con JWT en Node.js y Express, guardar usuarios en PostgreSQL y proteger los endpoints privados.",facil,synthetic_controlled
+backend_002,en,backend,"Implement JWT authentication in Node.js and Express, store users in PostgreSQL, and protect private endpoints.",facil,synthetic_controlled
+backend_002,ru,backend,"Реализовать аутентификацию JWT в Node.js и Express, хранить пользователей в PostgreSQL и защищать приватные endpoints.",facil,synthetic_controlled
+backend_002,es_en,backend,"Implementar JWT authentication en Node.js y Express, guardar users en PostgreSQL y proteger private endpoints.",facil,synthetic_controlled
+backend_003,es,backend,"Construir un servicio con Django REST Framework, serializers y ORM para registrar productos, validar datos y ejecutar migraciones.",media,synthetic_controlled
+backend_003,en,backend,"Build a service with Django REST Framework, serializers, and the ORM to register products, validate data, and run migrations.",media,synthetic_controlled
+backend_003,ru,backend,"Создать сервис на Django REST Framework с serializers и ORM для регистрации товаров, проверки данных и выполнения миграций.",media,synthetic_controlled
+backend_003,es_en,backend,"Construir un service con Django REST Framework, serializers y ORM para registrar products, validar data y ejecutar migrations.",media,synthetic_controlled
+backend_004,es,backend,"Diseñar microservicios que publiquen eventos en Kafka, usen Redis como caché y apliquen reglas de negocio antes de guardar datos.",media,synthetic_controlled
+backend_004,en,backend,"Design microservices that publish events to Kafka, use Redis as a cache, and apply business rules before storing data.",media,synthetic_controlled
+backend_004,ru,backend,"Спроектировать микросервисы, которые публикуют события в Kafka, используют Redis как кэш и применяют бизнес-правила перед сохранением данных.",media,synthetic_controlled
+backend_004,es_en,backend,"Diseñar microservices que publish events en Kafka, usen Redis como cache y apliquen business rules antes de guardar data.",media,synthetic_controlled
+backend_005,es,backend,"Crear un servicio en Go con gRPC que procese trabajos en segundo plano, maneje transacciones en MySQL y reintente operaciones fallidas.",dificil,synthetic_controlled
+backend_005,en,backend,"Create a Go service with gRPC that processes background jobs, handles MySQL transactions, and retries failed operations.",dificil,synthetic_controlled
+backend_005,ru,backend,"Создать сервис на Go с gRPC, который обрабатывает фоновые задачи, управляет транзакциями MySQL и повторяет неудачные операции.",dificil,synthetic_controlled
+backend_005,es_en,backend,"Crear un Go service con gRPC que procese background jobs, maneje MySQL transactions y retry failed operations.",dificil,synthetic_controlled
+cloud_001,es,cloud,"Desplegar una aplicación en AWS usando ECR, ECS y un Application Load Balancer con auto scaling para aumentar la capacidad.",facil,synthetic_controlled
+cloud_001,en,cloud,"Deploy an application on AWS using ECR, ECS, and an Application Load Balancer with auto scaling to increase capacity.",facil,synthetic_controlled
+cloud_001,ru,cloud,"Развернуть приложение в AWS с использованием ECR, ECS и Application Load Balancer с auto scaling для увеличения мощности.",facil,synthetic_controlled
+cloud_001,es_en,cloud,"Desplegar una aplicación en AWS using ECR, ECS y an Application Load Balancer con auto scaling.",facil,synthetic_controlled
+cloud_002,es,cloud,"Configurar Kubernetes con Deployments, Services e Ingress y usar Helm para instalar la aplicación en varios entornos.",facil,synthetic_controlled
+cloud_002,en,cloud,"Configure Kubernetes with Deployments, Services, and Ingress, and use Helm to install the application in multiple environments.",facil,synthetic_controlled
+cloud_002,ru,cloud,"Настроить Kubernetes с Deployments, Services и Ingress и использовать Helm для установки приложения в нескольких окружениях.",facil,synthetic_controlled
+cloud_002,es_en,cloud,"Configurar Kubernetes con Deployments, Services e Ingress y usar Helm para install la application en multiple environments.",facil,synthetic_controlled
+cloud_003,es,cloud,"Provisionar infraestructura en Azure con Terraform, creando una red virtual, App Service y Key Vault mediante infraestructura como código.",media,synthetic_controlled
+cloud_003,en,cloud,"Provision infrastructure in Azure with Terraform by creating a virtual network, App Service, and Key Vault through infrastructure as code.",media,synthetic_controlled
+cloud_003,ru,cloud,"Развернуть инфраструктуру в Azure с Terraform, создав виртуальную сеть, App Service и Key Vault с помощью infrastructure as code.",media,synthetic_controlled
+cloud_003,es_en,cloud,"Provisionar infrastructure en Azure con Terraform, creando una virtual network, App Service y Key Vault as infrastructure as code.",media,synthetic_controlled
+cloud_004,es,cloud,"Ejecutar un servicio sin servidores en Google Cloud Run, recibir eventos con Pub/Sub, conectarlo a Cloud SQL y controlar permisos con IAM.",media,synthetic_controlled
+cloud_004,en,cloud,"Run a serverless service on Google Cloud Run, receive events with Pub/Sub, connect it to Cloud SQL, and control permissions with IAM.",media,synthetic_controlled
+cloud_004,ru,cloud,"Запустить serverless-сервис в Google Cloud Run, получать события через Pub/Sub, подключить Cloud SQL и управлять правами через IAM.",media,synthetic_controlled
+cloud_004,es_en,cloud,"Ejecutar un serverless service en Google Cloud Run, receive events con Pub/Sub, conectarlo a Cloud SQL y manage permissions con IAM.",media,synthetic_controlled
+cloud_005,es,cloud,"Construir un pipeline de despliegue que genere imágenes Docker, las publique en un registro y realice actualizaciones rolling con rollback automático.",dificil,synthetic_controlled
+cloud_005,en,cloud,"Build a deployment pipeline that creates Docker images, publishes them to a registry, and performs rolling updates with automatic rollback.",dificil,synthetic_controlled
+cloud_005,ru,cloud,"Создать pipeline развертывания, который собирает Docker-образы, публикует их в registry и выполняет rolling updates с автоматическим rollback.",dificil,synthetic_controlled
+cloud_005,es_en,cloud,"Construir un deployment pipeline que build Docker images, las publique en un registry y haga rolling updates con automatic rollback.",dificil,synthetic_controlled
+datascience_001,es,datascience,"Entrenar un Random Forest con scikit-learn usando pandas, separar entrenamiento y prueba y evaluar el modelo con validación cruzada.",facil,synthetic_controlled
+datascience_001,en,datascience,"Train a Random Forest with scikit-learn using pandas, split training and test data, and evaluate the model with cross-validation.",facil,synthetic_controlled
+datascience_001,ru,datascience,"Обучить Random Forest в scikit-learn с использованием pandas, разделить данные на train и test и оценить модель с помощью cross-validation.",facil,synthetic_controlled
+datascience_001,es_en,datascience,"Entrenar un Random Forest con scikit-learn using pandas, split train/test y evaluar el model con cross-validation.",facil,synthetic_controlled
+datascience_002,es,datascience,"Predecir abandono de clientes con regresión logística, crear variables, tratar el desbalance de clases y comparar precision, recall y F1.",facil,synthetic_controlled
+datascience_002,en,datascience,"Predict customer churn with logistic regression, engineer features, handle class imbalance, and compare precision, recall, and F1.",facil,synthetic_controlled
+datascience_002,ru,datascience,"Предсказать отток клиентов с помощью логистической регрессии, создать признаки, обработать дисбаланс классов и сравнить precision, recall и F1.",facil,synthetic_controlled
+datascience_002,es_en,datascience,"Predecir customer churn con logistic regression, hacer feature engineering, tratar class imbalance y comparar precision, recall y F1.",facil,synthetic_controlled
+datascience_003,es,datascience,Entrenar una red neuronal convolucional con TensorFlow para clasificar imágenes y comparar las curvas de pérdida de entrenamiento y validación.,media,synthetic_controlled
+datascience_003,en,datascience,Train a convolutional neural network with TensorFlow to classify images and compare training and validation loss curves.,media,synthetic_controlled
+datascience_003,ru,datascience,Обучить сверточную нейронную сеть в TensorFlow для классификации изображений и сравнить кривые потерь на training и validation.,media,synthetic_controlled
+datascience_003,es_en,datascience,Entrenar una convolutional neural network con TensorFlow para classify images y comparar training vs validation loss.,media,synthetic_controlled
+datascience_004,es,datascience,"Analizar una serie temporal de ventas, estudiar tendencia y estacionalidad y comparar modelos ARIMA para pronosticar los próximos meses.",media,synthetic_controlled
+datascience_004,en,datascience,"Analyze a sales time series, study trend and seasonality, and compare ARIMA models to forecast the next months.",media,synthetic_controlled
+datascience_004,ru,datascience,"Проанализировать временной ряд продаж, изучить тренд и сезонность и сравнить модели ARIMA для прогноза следующих месяцев.",media,synthetic_controlled
+datascience_004,es_en,datascience,"Analizar una sales time series, estudiar trend y seasonality y comparar ARIMA models para forecast los próximos meses.",media,synthetic_controlled
+datascience_005,es,datascience,"Reducir variables con PCA, aplicar K-Means para segmentar observaciones y usar silhouette score para seleccionar el número de clusters.",dificil,synthetic_controlled
+datascience_005,en,datascience,"Reduce variables with PCA, apply K-Means to segment observations, and use the silhouette score to select the number of clusters.",dificil,synthetic_controlled
+datascience_005,ru,datascience,"Снизить размерность с помощью PCA, применить K-Means для сегментации наблюдений и использовать silhouette score для выбора числа кластеров.",dificil,synthetic_controlled
+datascience_005,es_en,datascience,"Reducir variables con PCA, aplicar K-Means para segment observations y usar silhouette score para elegir el number of clusters.",dificil,synthetic_controlled
+frontend_001,es,frontend,"Crear una interfaz con React usando componentes funcionales, hooks para manejar estado y React Router para navegar entre páginas.",facil,synthetic_controlled
+frontend_001,en,frontend,"Create a React interface using functional components, hooks for state management, and React Router to navigate between pages.",facil,synthetic_controlled
+frontend_001,ru,frontend,"Создать интерфейс на React с функциональными компонентами, hooks для управления состоянием и React Router для навигации между страницами.",facil,synthetic_controlled
+frontend_001,es_en,frontend,"Crear una React interface using functional components, hooks para state management y React Router para navegar entre pages.",facil,synthetic_controlled
+frontend_002,es,frontend,"Desarrollar un panel con Vue 3, Composition API y Pinia para compartir el estado entre componentes y actualizar la interfaz de forma reactiva.",facil,synthetic_controlled
+frontend_002,en,frontend,"Develop a dashboard with Vue 3, the Composition API, and Pinia to share state between components and update the interface reactively.",facil,synthetic_controlled
+frontend_002,ru,frontend,Разработать dashboard на Vue 3 с Composition API и Pinia для общего состояния между компонентами и реактивного обновления интерфейса.,facil,synthetic_controlled
+frontend_002,es_en,frontend,"Desarrollar un dashboard con Vue 3, Composition API y Pinia para share state entre components y update la UI reactively.",facil,synthetic_controlled
+frontend_003,es,frontend,"Construir formularios reactivos en Angular, consumir datos con servicios HTTP y usar RxJS para manejar flujos asíncronos en la interfaz.",media,synthetic_controlled
+frontend_003,en,frontend,"Build reactive forms in Angular, consume data with HTTP services, and use RxJS to handle asynchronous streams in the interface.",media,synthetic_controlled
+frontend_003,ru,frontend,"Создать reactive forms в Angular, получать данные через HTTP services и использовать RxJS для обработки асинхронных потоков в интерфейсе.",media,synthetic_controlled
+frontend_003,es_en,frontend,"Construir reactive forms en Angular, consume data con HTTP services y usar RxJS para manejar async streams en la interface.",media,synthetic_controlled
+frontend_004,es,frontend,"Diseñar una página responsive con CSS Grid y Flexbox, mejorar accesibilidad con HTML semántico y adaptar componentes a distintos tamaños de pantalla.",media,synthetic_controlled
+frontend_004,en,frontend,"Design a responsive page with CSS Grid and Flexbox, improve accessibility with semantic HTML, and adapt components to different screen sizes.",media,synthetic_controlled
+frontend_004,ru,frontend,"Спроектировать responsive-страницу с CSS Grid и Flexbox, улучшить доступность с semantic HTML и адаптировать компоненты к разным размерам экрана.",media,synthetic_controlled
+frontend_004,es_en,frontend,"Diseñar una responsive page con CSS Grid y Flexbox, mejorar accessibility con semantic HTML y adaptar components a distintos screen sizes.",media,synthetic_controlled
+frontend_005,es,frontend,"Crear una SPA en TypeScript que actualice el DOM, consuma una API con fetch, gestione eventos del usuario y muestre estados de carga y error.",dificil,synthetic_controlled
+frontend_005,en,frontend,"Create a TypeScript SPA that updates the DOM, consumes an API with fetch, handles user events, and displays loading and error states.",dificil,synthetic_controlled
+frontend_005,ru,frontend,"Создать SPA на TypeScript, которая обновляет DOM, обращается к API через fetch, обрабатывает события пользователя и показывает состояния загрузки и ошибок.",dificil,synthetic_controlled
+frontend_005,es_en,frontend,"Crear una TypeScript SPA que update el DOM, consume una API con fetch, handle user events y muestre loading y error states.",dificil,synthetic_controlled
